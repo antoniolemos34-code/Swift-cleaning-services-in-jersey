@@ -2,10 +2,676 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Swift Cleaning Services in Jersey</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Swift Cleaning Services in Jersey – professional, reliable domestic and commercial cleaning across Jersey. One-off, regular and end-of-tenancy cleans." />
+  <meta name="author" content="Swift Cleaning Services in Jersey" />
+
+  <!-- SOCIAL PREVIEW -->
+  <meta property="og:title" content="Swift Cleaning Services in Jersey">
+  <meta property="og:description" content="Fast, reliable and professional cleaning services across Jersey." />
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --blue: #0054a6;
+      --yellow: #ffc800;
+      --dark: #102033;
+      --light: #f7f9fc;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: var(--blue);
+      color: var(--white);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.05em;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      display: inline-block;
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--dark);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(0.95);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--yellow);
+      color: var(--yellow);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 200, 0, 0.08);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 4rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem 1rem 3rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      margin-bottom: 1rem;
+      color: var(--blue);
+    }
+
+    .hero p {
+      margin-bottom: 1.4rem;
+      font-size: 1rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-list li::before {
+      content: "✔";
+      color: var(--yellow);
+      margin-right: 0.4rem;
+    }
+
+    .hero-img {
+      background: linear-gradient(135deg, var(--blue), var(--dark));
+      border-radius: 1.4rem;
+      min-height: 230px;
+      padding: 1.4rem;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+    }
+
+    .hero-img h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-img p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .hero-tag {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.4rem;
+      color: var(--yellow);
+    }
+
+    .hero-badge {
+      align-self: flex-start;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      font-size: 0.8rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      background: var(--white);
+      border-radius: 1.2rem;
+      padding: 1.8rem 1.3rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.9rem;
+      color: var(--blue);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.8rem;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(0,84,166,0.06);
+      font-size: 0.8rem;
+      margin: 0.15rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+
+    .service-card {
+      border-radius: 0.9rem;
+      padding: 1rem 0.9rem;
+      background: #f8fbff;
+      border: 1px solid rgba(0,84,166,0.12);
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--dark);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--blue);
+      background: rgba(0,84,166,0.08);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .contact-actions a {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2.5rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* CHAT WIDGET */
+    .chat-widget {
+      position: fixed;
+      bottom: 1.1rem;
+      right: 1.1rem;
+      z-index: 100;
+      font-size: 0.9rem;
+    }
+
+    .chat-toggle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: none;
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+      cursor: pointer;
+      font-size: 1.3rem;
+    }
+
+    .chat-panel {
+      position: absolute;
+      bottom: 62px;
+      right: 0;
+      width: 290px;
+      max-height: 420px;
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      background: var(--blue);
+      color: #fff;
+      padding: 0.7rem 0.9rem;
+    }
+
+    .chat-header h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .chat-header p {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    .chat-body {
+      padding: 0.8rem;
+      max-height: 260px;
+      overflow-y: auto;
+      background: #f9fafb;
+    }
+
+    .chat-msg {
+      background: #ffffff;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.7rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.8rem;
+      box-shadow: 0 4px 10px rgba(15,23,42,0.06);
+    }
+
+    .chat-msg.user {
+      background: var(--blue);
+      color: #ffffff;
+      margin-left: auto;
+      border-bottom-right-radius: 0.1rem;
+    }
+
+    .chat-msg.bot {
+      border-bottom-left-radius: 0.1rem;
+    }
+
+    .chat-quick {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding: 0.6rem 0.7rem 0.8rem;
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .chat-btn {
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.75rem;
+      background: #f9fafb;
+      cursor: pointer;
+    }
+
+    .chat-btn.primary {
+      border-color: var(--yellow);
+      background: var(--yellow);
+      color: #111827;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        margin: 0 0.7rem 0.3rem 0;
+      }
+
+      .hero,
+      .two-col,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding-inline: 0.7rem;
+      }
+
+      section {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Swift Cleaning Services in Jersey</h1>
-  <p>Website em construção.</p>
+
+<header>
+  <div class="logo-text">SWIFT CLEANING SERVICES</div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#areas">Areas</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div>
+      <h1 id="hero-title">Swift Cleaning Services in Jersey</h1>
+      <p>
+        Professional, reliable and friendly cleaning team based in Jersey.
+        We help busy families and businesses keep their spaces fresh, tidy and spotless.
+      </p>
+      <ul class="hero-list">
+        <li>Domestic &amp; commercial cleaning</li>
+        <li>Regular, one-off &amp; end-of-tenancy cleans</li>
+        <li>Fully insured &amp; trustworthy local team</li>
+      </ul>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="#contact" class="btn-primary">Get a free quote</a>
+        <a href="#services" class="btn-outline">View our services</a>
+      </div>
+    </div>
+
+    <div class="hero-img">
+      <div>
+        <div class="hero-tag">Jersey • Cleaning Experts</div>
+        <h2>Swift, spotless &amp; stress-free.</h2>
+        <p>
+          Let us look after the cleaning so you can focus on what matters:
+          family, work and enjoying life in Jersey.
+        </p>
+      </div>
+      <div class="hero-badge">
+        ✅ Trusted local company • Mon–Sat
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="two-col">
+      <div>
+        <h2>About Swift Cleaning Services</h2>
+        <p>
+          Swift Cleaning Services is a local Jersey company dedicated to providing
+          high-quality, detail-focused cleaning. Every visit is carefully planned so
+          that your home or workplace feels fresh, hygienic and welcoming.
+        </p>
+        <p>
+          We bring our own products and equipment, follow your preferences and
+          can work around your schedule – early mornings, evenings or weekends.
+        </p>
+      </div>
+      <div>
+        <p><strong>Perfect for:</strong></p>
+        <span class="pill">Busy families</span>
+        <span class="pill">Professionals</span>
+        <span class="pill">Landlords &amp; agents</span>
+        <span class="pill">Holiday lets / Airbnbs</span>
+        <span class="pill">Offices &amp; small businesses</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Our Cleaning Services</h2>
+    <p>Flexible plans to match your needs and your budget.</p>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="badge">Homes</div>
+        <h3>Regular Domestic Cleaning</h3>
+        <p>Weekly, fortnightly or monthly cleans to keep your home consistently fresh and tidy.</p>
+        <ul>
+          <li>Dusting, vacuuming &amp; mopping</li>
+          <li>Kitchens &amp; bathrooms</li>
+          <li>Bedrooms &amp; living areas</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="badge">Move-in / Move-out</div>
+        <h3>End-of-Tenancy &amp; Deep Cleans</h3>
+        <p>Thorough, top-to-bottom cleaning ideal for check-outs, landlords and property managers.</p>
+        <ul>
+          <li>Inside appliances &amp; cupboards</li>
+          <li>Skirting boards, doors &amp; switches</li>
+          <li>Hard-to-reach and high-traffic areas</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="badge">Business</div>
+        <h3>Commercial &amp; Office Cleaning</h3>
+        <p>Discreet and reliable service to keep offices, salons and shops welcoming for staff and clients.</p>
+        <ul>
+          <li>Out-of-hours cleaning</li>
+          <li>Workstations &amp; communal areas</li>
+          <li>Washrooms &amp; reception</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="badge">Extras</div>
+        <h3>Optional Add-Ons</h3>
+        <p>Add extra services to your visit when needed.</p>
+        <ul>
+          <li>Inside fridge &amp; oven cleaning</li>
+          <li>Interior windows &amp; glass</li>
+          <li>Bed linen change &amp; laundry</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <h2>Why choose Swift Cleaning Services?</h2>
+    <div class="two-col">
+      <ul>
+        <li><strong>Local &amp; trustworthy</strong> – a small team that cares about every home we clean.</li>
+        <li><strong>Consistent quality</strong> – detailed checklists for every visit.</li>
+        <li><strong>Flexible</strong> – we adapt to your schedule and preferences.</li>
+      </ul>
+      <ul>
+        <li><strong>Transparent</strong> – clear communication and no hidden extras.</li>
+        <li><strong>Eco-aware</strong> – eco-friendly products available on request.</li>
+        <li><strong>Easy to contact</strong> – WhatsApp, phone, email or Facebook Messenger.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section id="areas">
+    <h2>Areas we cover in Jersey</h2>
+    <p>
+      We cover most of the island, including (but not limited to):
+    </p>
+    <p>
+      St Helier • St Saviour • St Clement • St Brelade • St Lawrence •
+      St Ouen • St Peter • Grouville • Trinity • St John • St Martin.
+    </p>
+    <p style="margin-top:0.7rem;">
+      Not sure if we cover your area? Use the chat in the bottom-right corner and ask –
+      we&apos;ll confirm it for you.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-box">
+      <div>
+        <h2>Request your free quote</h2>
+        <p>
+          Tell us a little about your property (house / flat / office),
+          how often you would like it cleaned and the best way to contact you.
+        </p>
+        <p style="margin-top:0.5rem;">
+          We usually reply the same day via WhatsApp, phone or email.
+        </p>
+      </div>
+      <div class="contact-actions">
+        <!-- TODO: Substituir pelos contactos reais da empresa -->
+        <a class="btn-primary" href="https://wa.me/WHATSAPP_NUMBER_HERE" target="_blank" rel="noopener">
+          Chat on WhatsApp
+        </a>
+        <a class="btn-outline" href="tel:PHONE_NUMBER_HERE">
+          Call Swift Cleaning Services
+        </a>
+        <a class="btn-outline" href="mailto:EMAIL_ADDRESS_HERE">
+          Email us your requirements
+        </a>
+        <a class="btn-outline" href="https://www.facebook.com/share/1Ah8pEoyrr/" target="_blank" rel="noopener">
+          Message us on Facebook
+        </a>
+        <p style="font-size:0.8rem; margin-top:0.4rem; color:#6b7280;">
+          Replace <code>WHATSAPP_NUMBER_HERE</code>, <code>PHONE_NUMBER_HERE</code> e
+          <code>EMAIL_ADDRESS_HERE</code> pelos contactos da empresa que estão na página de Facebook.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Swift Cleaning Services in Jersey &copy; <span id="year"></span>. All rights reserved.
+</footer>
+
+<!-- SIMPLE CHATBOT WIDGET -->
+<div class="chat-widget">
+  <div class="chat-panel" id="chatPanel" aria-live="polite">
+    <div class="chat-header">
+      <h4>Swift Cleaning Assistant</h4>
+      <p>Ask a quick question or tap a button below.</p>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-msg bot">
+        Hi 👋 Thanks for visiting Swift Cleaning Services in Jersey.
+        How can we help you today?
+      </div>
+    </div>
+    <div class="chat-quick">
+      <button class="chat-btn" data-text="I'd like a quote for regular cleaning.">
+        Regular cleaning quote
+      </button>
+      <button class="chat-btn" data-text="I need an end-of-tenancy clean.">
+        End-of-tenancy clean
+      </button>
+      <button class="chat-btn" data-text="Do you have availability this week?">
+        Availability this week
+      </button>
+      <button class="chat-btn primary" id="chatWhatsApp">
+        Talk on WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+    💬
+  </button>
+</div>
+
+<script>
+  // Year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Chat widget behaviour
+  const chatToggle = document.getElementById("chatToggle");
+  const chatPanel = document.getElementById("chatPanel");
+  const chatBody = document.getElementById("chatBody");
+  const quickButtons = document.querySelectorAll(".chat-btn[data-text]");
+  const whatsappBtn = document.getElementById("chatWhatsApp");
+
+  chatToggle.addEventListener("click", () => {
+    const isOpen = chatPanel.style.display === "flex";
+    chatPanel.style.display = isOpen ? "none" : "flex";
+  });
+
+  function addMessage(text, type) {
+    const msg = document.createElement("div");
+    msg.className = "chat-msg " + type;
+    msg.textContent = text;
+    chatBody.appendChild(msg);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  quickButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const text = btn.getAttribute("data-text");
+      addMessage(text, "user");
+      setTimeout(() => {
+        addMessage(
+          "Thanks for your message! Please tap 'Talk on WhatsApp' below or use the contact buttons on the page and we will respond as soon as possible.",
+          "bot"
+        );
+      }, 500);
+    });
+  });
+
+  // WhatsApp redirect (substituir pelo número real no formato internacional)
+  whatsappBtn.addEventListener("click", () => {
+    const url = "https://wa.me/WHATSAPP_NUMBER_HERE";
+    window.open(url, "_blank");
+  });
+</script>
+
 </body>
 </html>
