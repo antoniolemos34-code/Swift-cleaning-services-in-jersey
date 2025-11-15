@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Name – Professional Services in Jersey</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Company Name provides professional services in Jersey with friendly customer support and fast response via Facebook Messenger and WhatsApp.">
+  <meta name="author" content="Company Name">
+
+  <!-- FONTS & ICONS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #0f766e;   /* verde escuro profissional */
+      --primary-soft: #14b8a6;
+      --dark: #0f172a;
+      --light: #f9fafb;
+      --accent: #fbbf24;    /* dourado suave */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* LAYOUT BASE */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      background: #020617;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .5);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, var(--accent), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .logo-text span {
+      display: block;
+      font-size: .8rem;
+      font-weight: 400;
+      opacity: .7;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: .9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: .2rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: var(--primary-soft);
+      transition: width .2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .65rem 1.4rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease, background .2s ease, color .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+      color: white;
+      box-shadow: 0 14px 30px rgba(15, 118, 110, .4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(15, 118, 110, .5);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(148, 163, 184, .8);
+      color: #e5e7eb;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(148, 163, 184, .15);
+    }
+
+    /* HERO */
+    .hero {
+      background: radial-gradient(circle at top left, rgba(34, 197, 94, .18), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(56, 189, 248, .22), transparent 60%),
+                  linear-gradient(to bottom, #020617, #020617 55%, #020617 60%, #020617);
+      color: white;
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .2rem .65rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, .8);
+      border: 1px solid rgba(148, 163, 184, .5);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .eyebrow i {
+      color: var(--accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      margin: 1.1rem 0 .7rem;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p.lead {
+      font-size: .97rem;
+      opacity: .88;
+      max-width: 30rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin: 1.8rem 0 1.3rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: .78rem;
+      opacity: .85;
+    }
+
+    .hero-meta i {
+      color: var(--primary-soft);
+      margin-right: .35rem;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, .9);
+      border-radius: 1.4rem;
+      padding: 1.5rem 1.6rem;
+      box-shadow: 0 25px 55px rgba(15, 23, 42, .8);
+      border: 1px solid rgba(148, 163, 184, .4);
+    }
+
+    .hero-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: .7rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      font-size: .85rem;
+      display: grid;
+      gap: .45rem;
+    }
+
+    .hero-card li i {
+      color: var(--accent);
+      margin-right: .45rem;
+    }
+
+    /* SECTIONS GERAIS */
+    section {
+      padding: 3rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-title h2 {
+      font-size: 1.6rem;
+      margin-bottom: .4rem;
+      color: #020617;
+    }
+
+    .section-title p {
+      font-size: .9rem;
+      color: #64748b;
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.6rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .15rem .55rem;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, .08);
+      color: var(--primary);
+      font-size: .72rem;
+      margin-bottom: .6rem;
+    }
+
+    .about-text h3 {
+      font-size: 1.35rem;
+      margin-bottom: .6rem;
+    }
+
+    .about-text p {
+      font-size: .9rem;
+      color: #4b5563;
+      margin-bottom: .8rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .about-highlights div {
+      background: white;
+      border-radius: 1rem;
+      padding: .8rem .9rem;
+      border: 1px solid #e5e7eb;
+      font-size: .8rem;
+      color: #4b5563;
+      box-shadow: 0 8px 18px rgba(148, 163, 184, .25);
+    }
+
+    .about-highlights strong {
+      display: block;
+      color: var(--dark);
+      margin-bottom: .2rem;
+    }
+
+    .about-image {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 26px 55px rgba(15, 23, 42, .28);
+      position: relative;
+      background: radial-gradient(circle at 30% 0, rgba(56, 189, 248, .35), transparent 55%),
+                  radial-gradient(circle at 90% 90%, rgba(74, 222, 128, .3), transparent 60%);
+    }
+
+    .about-image-inner {
+      padding: 1.1rem;
+    }
+
+    .about-image img {
+      border-radius: 1.2rem;
+    }
+
+    /* SERVICES */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.4rem;
+      padding: 1.4rem 1.3rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 16px 32px rgba(15, 23, 42, .08);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: .4rem;
+      color: #020617;
+    }
+
+    .card p {
+      font-size: .85rem;
+      color: #6b7280;
+      margin-bottom: .7rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      font-size: .72rem;
+    }
+
+    .chip {
+      padding: .15rem .55rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      color: #4b5563;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      border-radius: 1.1rem;
+      overflow: hidden;
+      position: relative;
+      min-height: 160px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, .6), transparent 50%);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: .9rem;
+      bottom: .8rem;
+      z-index: 2;
+      color: white;
+      font-size: .8rem;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .testimonial {
+      background: #0f172a;
+      color: #e5e7eb;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.2rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, .8);
+    }
+
+    .testimonial::before {
+      content: "“";
+      position: absolute;
+      font-size: 4rem;
+      line-height: 1;
+      top: -1.3rem;
+      right: .6rem;
+      color: rgba(148, 163, 184, .15);
+    }
+
+    .testimonial p {
+      font-size: .84rem;
+      margin-bottom: .8rem;
+    }
+
+    .testimonial strong {
+      font-size: .85rem;
+    }
+
+    .testimonial span {
+      font-size: .72rem;
+      color: #9ca3af;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .contact-grid form {
+      background: white;
+      border-radius: 1.4rem;
+      padding: 1.4rem 1.3rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 18px 35px rgba(15, 23, 42, .09);
+    }
+
+    .field-group {
+      margin-bottom: .85rem;
+      font-size: .82rem;
+    }
+
+    .field-group label {
+      display: block;
+      margin-bottom: .25rem;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    .field-group input,
+    .field-group textarea {
+      width: 100%;
+      border-radius: .75rem;
+      border: 1px solid #e5e7eb;
+      padding: .55rem .75rem;
+      font-family: inherit;
+      font-size: .82rem;
+      outline: none;
+      transition: border .15s ease, box-shadow .15s ease;
+    }
+
+    .field-group input:focus,
+    .field-group textarea:focus {
+      border-color: var(--primary-soft);
+      box-shadow: 0 0 0 1px rgba(20, 184, 166, .5);
+    }
+
+    .field-group textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .contact-details {
+      font-size: .9rem;
+      color: #4b5563;
+    }
+
+    .contact-details h3 {
+      font-size: 1.1rem;
+      margin-bottom: .5rem;
+    }
+
+    .contact-details p {
+      margin-bottom: .5rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin: .7rem 0 1.1rem;
+      display: grid;
+      gap: .4rem;
+    }
+
+    .contact-list li i {
+      color: var(--primary);
+      margin-right: .5rem;
+    }
+
+    .social-row {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      font-size: .9rem;
+    }
+
+    .social-row a {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: white;
+      color: #111827;
+      font-size: .8rem;
+    }
+
+    .social-row a i {
+      color: var(--primary);
+    }
+
+    footer {
+      background: #020617;
+      color: #9ca3af;
+      padding: 1.4rem 0;
+      font-size: .8rem;
+    }
+
+    footer .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* CHAT WIDGET */
+    .chat-widget-btn {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      background: linear-gradient(135deg, var(--primary-soft), var(--primary));
+      color: white;
+      border-radius: 999px;
+      padding: .7rem 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      box-shadow: 0 18px 40px rgba(15, 118, 110, .65);
+      cursor: pointer;
+      font-size: .9rem;
+      z-index: 80;
+    }
+
+    .chat-widget-btn i {
+      font-size: 1rem;
+    }
+
+    .chat-panel {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 4.4rem;
+      width: 270px;
+      max-width: calc(100% - 2.4rem);
+      background: #020617;
+      color: #e5e7eb;
+      border-radius: 1.2rem;
+      box-shadow: 0 22px 55px rgba(15, 23, 42, .9);
+      padding: 1rem .9rem .95rem;
+      z-index: 80;
+      display: none;
+      border: 1px solid rgba(148, 163, 184, .4);
+    }
+
+    .chat-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: .6rem;
+    }
+
+    .chat-panel-header h4 {
+      font-size: .9rem;
+    }
+
+    .chat-panel-header span {
+      font-size: .72rem;
+      color: #9ca3af;
+    }
+
+    .chat-panel-body {
+      font-size: .8rem;
+      margin-bottom: .7rem;
+      color: #cbd5f5;
+    }
+
+    .chat-actions {
+      display: grid;
+      gap: .4rem;
+      font-size: .8rem;
+    }
+
+    .chat-actions button {
+      border-radius: .8rem;
+      border: none;
+      padding: .45rem .65rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(15, 23, 42, .9);
+      color: #e5e7eb;
+      cursor: pointer;
+      border: 1px solid rgba(148, 163, 184, .5);
+    }
+
+    .chat-actions button span {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .8rem;
+    }
+
+    .chat-actions button i {
+      color: var(--primary-soft);
+    }
+
+    .chat-actions button:hover {
+      background: rgba(15, 23, 42, .7);
+    }
+
+    .chat-close {
+      background: none;
+      border: none;
+      color: #9ca3af;
+      cursor: pointer;
+      font-size: .9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .cards-3,
+      .gallery-grid,
+      .testimonials-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero-grid {
+        gap: 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .about-image-inner {
+        padding: .9rem;
+      }
+
+      .cards-3,
+      .gallery-grid,
+      .testimonials-grid {
+        gap: 1rem;
+      }
+
+      .chat-panel {
+        right: .9rem;
+        bottom: 4.1rem;
+        width: calc(100% - 1.8rem);
+      }
+
+      .chat-widget-btn {
+        right: .9rem;
+        bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-mark">C</div>
+        <div class="logo-text">
+          Company Name
+          <span>Professional Services · Jersey</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-outline">
+        Book a call
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">
+          <i class="fa-solid fa-location-dot"></i>
+          Jersey · Mobile Business
+        </div>
+        <h1>
+          Friendly, <span>professional service</span> wherever you are.
+        </h1>
+        <p class="lead">
+          Company Name brings quality products and great service across Jersey —
+          with easy booking and instant contact via Facebook Messenger and WhatsApp.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            Book now
+          </a>
+          <a href="#services" class="btn btn-outline">
+            View services
+          </a>
+        </div>
+        <div class="hero-meta">
+          <div><i class="fa-regular fa-clock"></i>Fast responses during opening hours</div>
+          <div><i class="fa-solid fa-star"></i>Local, independent &amp; customer-focused</div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Why customers choose us</h3>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>High-quality products &amp; friendly service</li>
+          <li><i class="fa-solid fa-check"></i>Available for events, workplaces &amp; private bookings</li>
+          <li><i class="fa-solid fa-check"></i>Easy contact via Messenger &amp; WhatsApp</li>
+          <li><i class="fa-solid fa-check"></i>Fully mobile – we come to you</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <div class="badge">
+          <i class="fa-solid fa-mug-hot"></i>
+          Local, independent business
+        </div>
+        <h3>Bringing great service and local flavour to Jersey</h3>
+        <p>
+          Company Name is a Jersey-based mobile business providing high-quality products
+          and a warm welcome at every stop. Whether it’s a regular location, a private
+          event or a corporate booking, we focus on consistency, quality and friendly service.
+        </p>
+        <p>
+          We are fully equipped, insured and ready to support your events, offices and gatherings
+          with reliable service and simple, modern ways to get in touch.
+        </p>
+        <div class="about-highlights">
+          <div>
+            <strong>Events &amp; functions</strong>
+            Ideal for fairs, markets, private parties and corporate days.
+          </div>
+          <div>
+            <strong>Regular locations</strong>
+            We can serve at fixed spots across Jersey on agreed schedules.
+          </div>
+          <div>
+            <strong>Corporate &amp; office</strong>
+            Treat your team or clients with something special on site.
+          </div>
+        </div>
+      </div>
+
+      <div class="about-image">
+        <div class="about-image-inner">
+          <!-- TROCA ESTA IMAGEM POR UMA FOTO REAL DA EMPRESA -->
+          <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               alt="Team serving customers at an event">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Services</h2>
+        <p>We adapt our service to your location, schedule and event – always with quality and a smile.</p>
+      </div>
+      <div class="cards-3">
+        <article class="card">
+          <h3>Regular service points</h3>
+          <p>
+            Weekly or daily visits to fixed locations around Jersey, so your customers or staff
+            know exactly when to find us.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Office parks</span>
+            <span class="chip">Residential areas</span>
+            <span class="chip">Roadside stops</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Private events &amp; parties</h3>
+          <p>
+            Birthdays, weddings, family gatherings or community events – we bring the setup,
+            you enjoy the occasion.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Weddings</span>
+            <span class="chip">Birthdays</span>
+            <span class="chip">Fundraisers</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Corporate &amp; workplace</h3>
+          <p>
+            Reward your team or impress clients with high-quality service directly at your premises,
+            at a time that suits you.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Staff treats</span>
+            <span class="chip">Client events</span>
+            <span class="chip">Team days</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <h2>Gallery</h2>
+        <p>A glimpse of what our mobile service looks like on the road and at events.</p>
+      </div>
+      <div class="gallery-grid">
+        <!-- SUBSTITUI ESTES BACKGROUNDS POR FOTOS REAIS SE QUISERES -->
+        <div class="gallery-item"
+             style="background-image:url('https://images.pexels.com/photos/373882/pexels-photo-373882.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+          <div class="gallery-caption">Mobile setup on location</div>
+        </div>
+        <div class="gallery-item"
+             style="background-image:url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+          <div class="gallery-caption">Serving happy customers</div>
+        </div>
+        <div class="gallery-item"
+             style="background-image:url('https://images.pexels.com/photos/1394881/pexels-photo-1394881.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+          <div class="gallery-caption">Perfect for events &amp; markets</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>What our customers say</h2>
+        <p>Real feedback from people who enjoyed our service across Jersey.</p>
+      </div>
+      <div class="testimonials-grid">
+        <article class="testimonial">
+          <p>
+            “Fantastic service and such a friendly team. They created a great atmosphere and
+            everyone loved it.”
+          </p>
+          <strong>Customer name</strong>
+          <span>Event organiser</span>
+        </article>
+        <article class="testimonial">
+          <p>
+            “Professional, reliable and delicious! We booked them for our staff appreciation
+            day and it was a big hit.”
+          </p>
+          <strong>Customer name</strong>
+          <span>HR Manager</span>
+        </article>
+        <article class="testimonial">
+          <p>
+            “Great communication through Messenger and WhatsApp, and everything ran smoothly
+            from start to finish.”
+          </p>
+          <strong>Customer name</strong>
+          <span>Corporate client</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div class="contact-details">
+        <h3>Let’s plan your booking</h3>
+        <p>
+          Send us a quick message with your date, location and type of event, and we’ll reply as
+          soon as possible via Messenger, WhatsApp or email.
+        </p>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-location-dot"></i>Jersey, Channel Islands</li>
+          <!-- TROCA ESTES DADOS PELOS REAIS DA EMPRESA -->
+          <li><i class="fa-solid fa-phone"></i>Phone: <strong>+44 0000 000000</strong></li>
+          <li><i class="fa-regular fa-envelope"></i>Email: <strong>info@companyname.je</strong></li>
+        </ul>
+        <div class="social-row">
+          <!-- SUBSTITUI YOUR_FACEBOOK_USERNAME PELO USERNAME DO FACEBOOK -->
+          <a href="https://m.me/YOUR_FACEBOOK_USERNAME" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-facebook-messenger"></i> Messenger
+          </a>
+          <!-- SUBSTITUI 440000000000 PELO NÚMERO REAL -->
+          <a href="https://wa.me/440000000000?text=Hi%20I%27d%20like%20to%20ask%20about%20a%20booking"
+             target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-facebook-f"></i> Facebook
+          </a>
+        </div>
+      </div>
+
+      <form>
+        <div class="field-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us about your date, location and event..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="event.preventDefault(); openMessengerFromForm();">
+          Send via Messenger
+        </button>
+        <p style="margin-top:.6rem;font-size:.75rem;color:#6b7280;">
+          This form opens a pre-written message in Facebook Messenger so you can complete the booking conversation there.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Company Name. All rights reserved.</div>
+      <div>Site by AP Digital Solutions · <a href="https://apdigitalsolutions.digital" target="_blank" style="color:#e5e7eb;text-decoration:underline;">apdigitalsolutions.digital</a></div>
+    </div>
+  </footer>
+
+  <!-- CHAT WIDGET -->
+  <div class="chat-widget-btn" id="chat-toggle">
+    <i class="fa-solid fa-comments"></i>
+    Chat with us
+  </div>
+
+  <div class="chat-panel" id="chat-panel">
+    <div class="chat-panel-header">
+      <div>
+        <h4>Need a quick answer?</h4>
+        <span>Choose how you want to chat.</span>
+      </div>
+      <button class="chat-close" id="chat-close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="chat-panel-body">
+      We usually reply fastest on Facebook Messenger and WhatsApp during opening hours.
+    </div>
+    <div class="chat-actions">
+      <button type="button" onclick="openMessenger()">
+        <span><i class="fa-brands fa-facebook-messenger"></i> Messenger</span>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </button>
+      <button type="button" onclick="openWhatsApp()">
+        <span><i class="fa-brands fa-whatsapp"></i> WhatsApp</span>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </button>
+      <button type="button" onclick="openEmail()">
+        <span><i class="fa-regular fa-envelope"></i> Email</span>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Ano automático no footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // CHAT WIDGET
+    const chatToggle = document.getElementById("chat-toggle");
+    const chatPanel = document.getElementById("chat-panel");
+    const chatClose = document.getElementById("chat-close");
+
+    chatToggle.addEventListener("click", () => {
+      chatPanel.style.display = chatPanel.style.display === "block" ? "none" : "block";
+    });
+
+    chatClose.addEventListener("click", () => {
+      chatPanel.style.display = "none";
+    });
+
+    // LIGAÇÕES – TROCAR PLACEHOLDERS PELOS DADOS REAIS
+    const FB_USERNAME = "YOUR_FACEBOOK_USERNAME"; // <-- muda para o username da página
+    const WHATSAPP_NUMBER = "440000000000";       // <-- só números, com indicativo do país
+    const BOOKING_EMAIL = "info@companyname.je";  // <-- muda para o email real
+
+    function openMessenger() {
+      window.open(`https://m.me/${FB_USERNAME}`, "_blank");
+    }
+
+    function openWhatsApp() {
+      const msg = encodeURIComponent("Hi! I would like to ask about availability and prices.");
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+    }
+
+    function openEmail() {
+      const subject = encodeURIComponent("Booking enquiry");
+      const body = encodeURIComponent("Hi! I would like to ask about availability and prices for:");
+      window.location.href = `mailto:${BOOKING_EMAIL}?subject=${subject}&body=${body}`;
+    }
+
+    // Enviar mensagem a partir do formulário abrindo o Messenger
+    function openMessengerFromForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const text = encodeURIComponent(
+        `Hi! My name is ${name || "…"}. Email: ${email || "not provided"}.\n\nMessage:\n${message || "Booking enquiry."}`
+      );
+
+      window.open(`https://m.me/${FB_USERNAME}?ref=${text}`, "_blank");
+    }
+  </script>
+</body>
+</html>
