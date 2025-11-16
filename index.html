@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Swift Cleaning Services in Jersey – Professional Cleaning</title>
 
   <meta
@@ -15,901 +12,747 @@
 
   <style>
     :root {
-      --swift-blue: #0054a6;
-      --swift-yellow: #ffc72c;
-      --swift-dark: #0f172a;
-      --swift-light: #f5f7fb;
-      --swift-border: #d7deea;
-      --swift-radius-lg: 18px;
-      --swift-radius-full: 999px;
-      --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.18);
+      --bg: #f5f5f7;
+      --panel: #ffffff;
+      --text-main: #111111;
+      --text-muted: #6e6e73;
+      --accent: #0071e3;      /* azul tipo Apple */
+      --accent-soft: #e8f0fe;
+      --border: #d2d2d7;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.08);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin:0; padding:0; }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: #ffffff;
-      color: #111827;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        system-ui, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
       line-height: 1.6;
       scroll-behavior: smooth;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
     img {
       max-width: 100%;
-      display: block;
+      display:block;
     }
+
+    a { color: inherit; text-decoration:none; }
 
     .page {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      display:flex;
+      flex-direction:column;
     }
 
     .container {
-      width: 100%;
       max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
+      margin:0 auto;
+      padding:0 20px;
+      width:100%;
     }
 
     /* HEADER */
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.98);
-      border-bottom: 3px solid var(--swift-yellow);
+      position:sticky;
+      top:0;
+      z-index:40;
+      backdrop-filter: blur(18px);
+      background: rgba(245,245,247,0.9);
+      border-bottom:1px solid rgba(210,210,215,0.7);
     }
 
     .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.7rem 0;
-      gap: 1rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1.5rem;
+      padding:0.75rem 0;
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .brand-logo {
-      height: 48px;
+      display:flex;
+      align-items:center;
+      gap:0.75rem;
     }
 
     .brand-logo img {
-      height: 100%;
-      width: auto;
+      height:40px;
+      width:auto;
     }
 
     .brand-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display:flex;
+      flex-direction:column;
+      gap:0.15rem;
+    }
+
+    .brand-name {
+      font-size:0.95rem;
+      font-weight:600;
+      letter-spacing:.04em;
+      text-transform:uppercase;
     }
 
     .brand-sub {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      color: #64748b;
-      letter-spacing: 0.16em;
+      font-size:0.72rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--text-muted);
     }
 
     nav {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      font-size: 0.86rem;
+      display:flex;
+      align-items:center;
+      gap:1.4rem;
+      font-size:0.86rem;
     }
 
     nav a {
-      color: #475569;
-      position: relative;
-      font-weight: 500;
+      color:#1d1d1f;
+      opacity:.7;
+      position:relative;
+      font-weight:500;
     }
 
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: var(--swift-yellow);
-      transition: width 0.2s ease-out;
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:2px;
+      background:var(--accent);
+      transition:width .18s ease-out;
     }
 
-    nav a:hover {
-      color: var(--swift-blue);
+    nav a:hover{
+      opacity:1;
+    }
+    nav a:hover::after{
+      width:100%;
     }
 
-    nav a:hover::after {
-      width: 100%;
+    .header-cta{
+      display:flex;
+      align-items:center;
+      gap:0.75rem;
+      font-size:0.78rem;
     }
 
-    .header-cta {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+    .pill-small{
+      padding:0.18rem 0.7rem;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--text-muted);
     }
 
-    .small-pill {
-      font-size: 0.72rem;
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      background: #fffbeb;
-      color: #92400e;
-      font-weight: 500;
+    .btn-wa{
+      border-radius:999px;
+      border:none;
+      padding:0.55rem 1.15rem;
+      font-size:0.82rem;
+      font-weight:600;
+      background:var(--accent);
+      color:#fff;
+      display:inline-flex;
+      align-items:center;
+      gap:0.45rem;
+      cursor:pointer;
+      box-shadow:0 10px 26px rgba(0,113,227,0.35);
+      white-space:nowrap;
     }
 
-    .btn-whatsapp {
-      border-radius: 999px;
-      padding: 0.55rem 1.1rem;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #0f172a;
-      background: var(--swift-yellow);
-      box-shadow: 0 10px 24px rgba(234, 179, 8, 0.45);
-      white-space: nowrap;
-    }
-
-    .btn-whatsapp span.icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 2px solid rgba(255, 255, 255, 0.9);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      background: #ffffff;
-      color: var(--swift-blue);
+    .btn-wa span.icon{
+      width:18px;
+      height:18px;
+      border-radius:999px;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:0.78rem;
+      color:var(--accent);
     }
 
     /* HERO */
 
-    .hero {
-      padding: 3rem 0 3rem;
-      background: linear-gradient(
-        180deg,
-        #fffbea 0,
-        #ffffff 40%,
-        #f5f7fb 100%
-      );
+    main { background:var(--bg); }
+
+    section { padding:70px 0; }
+
+    .hero{
+      padding-top:90px;
+      background:linear-gradient(180deg,#ffffff 0,#f5f5f7 100%);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-      gap: 2.5rem;
-      align-items: center;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.4fr) minmax(0,1.1fr);
+      gap:40px;
+      align-items:center;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.15rem 0.65rem;
-      border-radius: 999px;
-      background: #fffbeb;
-      border: 1px solid #facc15;
-      color: #92400e;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.85rem;
+    .hero-eyebrow{
+      font-size:0.78rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      margin-bottom:10px;
     }
 
-    .eyebrow-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--swift-yellow);
-      box-shadow: 0 0 0 5px rgba(250, 204, 21, 0.35);
+    .hero-title{
+      font-size:clamp(2.1rem,3vw,2.9rem);
+      line-height:1.05;
+      margin-bottom:10px;
+      font-weight:600;
     }
 
-    .hero-title {
-      font-size: clamp(2.1rem, 2.8vw + 1.2rem, 2.9rem);
-      line-height: 1.05;
-      margin-bottom: 0.9rem;
-      color: var(--swift-dark);
+    .hero-title span{
+      color:var(--accent);
     }
 
-    .hero-title .highlight {
-      color: var(--swift-blue);
+    .hero-sub{
+      font-size:0.96rem;
+      color:var(--text-muted);
+      max-width:32rem;
+      margin-bottom:18px;
     }
 
-    .hero-sub {
-      font-size: 0.98rem;
-      color: #4b5563;
-      max-width: 32rem;
-      margin-bottom: 1.4rem;
+    .hero-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.45rem;
+      margin-bottom:18px;
     }
 
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 1.6rem;
+    .tag-pill{
+      padding:0.22rem 0.8rem;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-size:0.78rem;
+      color:#424245;
     }
 
-    .hero-badge {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid #facc15;
-      background: #fef9c3;
-      color: #713f12;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.75rem;
+      margin-bottom:10px;
     }
 
-    .hero-badge span.dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--swift-blue);
+    .btn-primary{
+      border-radius:999px;
+      border:none;
+      padding:0.7rem 1.6rem;
+      font-size:0.9rem;
+      font-weight:600;
+      background:var(--accent);
+      color:#fff;
+      cursor:pointer;
+      box-shadow:0 14px 32px rgba(0,113,227,0.35);
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-      margin-bottom: 1.2rem;
+    .btn-secondary{
+      border-radius:999px;
+      border:1px solid var(--border);
+      padding:0.7rem 1.4rem;
+      font-size:0.88rem;
+      font-weight:500;
+      background:#fff;
+      color:var(--accent);
+      cursor:pointer;
     }
 
-    .btn-primary {
-      background: var(--swift-yellow);
-      color: #0f172a;
-      border-radius: 999px;
-      padding: 0.7rem 1.5rem;
-      border: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 14px 30px rgba(234, 179, 8, 0.5);
+    .hero-note{
+      font-size:0.82rem;
+      color:var(--text-muted);
+      max-width:30rem;
     }
 
-    .btn-secondary {
-      border-radius: 999px;
-      padding: 0.7rem 1.3rem;
-      border: 1px solid #cbd5e1;
-      background: #ffffffd9;
-      font-size: 0.86rem;
-      font-weight: 500;
-      cursor: pointer;
-      color: var(--swift-blue);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
+    .hero-media{
+      border-radius:var(--radius-lg);
+      background:var(--panel);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
     }
 
-    .hero-note {
-      font-size: 0.8rem;
-      color: #6b7280;
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
-    /* HERO CARD */
+    /* SECTION TITLES */
 
-    .hero-card {
-      background: #ffffff;
-      border-radius: 26px;
-      padding: 1rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      position: relative;
-      overflow: hidden;
+    .section-header{
+      margin-bottom:24px;
     }
 
-    .hero-photo {
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      margin-bottom: 0.75rem;
-      background: #ffffff;
-      min-height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.75rem;
+    .section-kicker{
+      font-size:0.78rem;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:var(--text-muted);
+      margin-bottom:4px;
     }
 
-    .hero-photo-img {
-      width: 80%;
-      height: auto;
-      object-fit: contain;
-      display: block;
-      opacity: 0;
-      transform: translateY(10px);
-      animation: slow-fade 1.8s ease-out forwards;
+    .section-title{
+      font-size:1.55rem;
+      font-weight:600;
+      margin-bottom:4px;
     }
 
-    .hero-tagline {
-      font-size: 0.88rem;
-      color: #1f2933;
-      margin-bottom: 0.55rem;
-      font-weight: 600;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      font-size: 0.78rem;
-      color: #64748b;
-    }
-
-    .hero-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .hero-meta span::before {
-      content: "•";
-      color: var(--swift-blue);
-    }
-
-    /* SECTIONS */
-
-    main {
-      background: #ffffff;
-    }
-
-    .section {
-      padding: 2.5rem 0 2.5rem;
-    }
-
-    .section-header {
-      margin-bottom: 1.4rem;
-    }
-
-    .section-kicker {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: #6b7280;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--swift-dark);
-      margin-bottom: 0.3rem;
-    }
-
-    .section-sub {
-      font-size: 0.9rem;
-      color: #6b7280;
-      max-width: 32rem;
+    .section-sub{
+      font-size:0.9rem;
+      color:var(--text-muted);
+      max-width:34rem;
     }
 
     /* SERVICES */
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
     }
 
-    .card {
-      border-radius: var(--swift-radius-lg);
-      border: 1px solid var(--swift-border);
-      background: white;
-      padding: 1rem;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    .card{
+      background:var(--panel);
+      border-radius:var(--radius-md);
+      border:1px solid var(--border);
+      box-shadow:0 16px 30px rgba(0,0,0,0.04);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
     }
 
-    .card-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: #eff6ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--swift-blue);
-      font-size: 0.9rem;
-      margin-bottom: 0.6rem;
+    .card img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
     }
 
-    .card-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-      color: var(--swift-dark);
+    .card-body{
+      padding:14px 16px 16px;
+      font-size:0.88rem;
     }
 
-    .card-text {
-      font-size: 0.86rem;
-      color: #6b7280;
-      margin-bottom: 0.4rem;
+    .card-title{
+      font-weight:600;
+      margin-bottom:4px;
     }
 
-    .card-tag {
-      display: inline-flex;
-      padding: 0.1rem 0.55rem;
-      border-radius: 999px;
-      background: #fef9c3;
-      color: #713f12;
-      font-size: 0.72rem;
-      font-weight: 600;
+    .card-text{
+      color:var(--text-muted);
+      margin-bottom:8px;
     }
 
-    .list {
-      margin-top: 0.6rem;
-      padding-left: 1.1rem;
-      font-size: 0.86rem;
-      color: #4b5563;
+    .card ul{
+      padding-left:1rem;
+      color:#424245;
+      margin-bottom:6px;
     }
 
-    .list li + li {
-      margin-top: 0.15rem;
+    .card ul li+li{
+      margin-top:2px;
     }
 
-    /* HOW IT WORKS + PRICES */
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 1.4rem;
-      align-items: flex-start;
-      margin-top: 1.2rem;
+    .card-tag{
+      display:inline-block;
+      margin-top:4px;
+      font-size:0.76rem;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      color:var(--text-muted);
     }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.8rem;
-      margin-top: 1rem;
+    /* WHY & HOW */
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.4fr) minmax(0,1.1fr);
+      gap:28px;
+      align-items:flex-start;
     }
 
-    .step {
-      border-radius: 16px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      padding: 0.8rem;
-      font-size: 0.82rem;
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin-top:14px;
+      font-size:0.84rem;
     }
 
-    .step-num {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      background: var(--swift-blue);
-      color: white;
-      font-size: 0.72rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.35rem;
+    .step{
+      background:var(--panel);
+      border-radius:16px;
+      border:1px solid var(--border);
+      padding:10px 11px;
     }
 
-    .step-title {
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-      color: #0f172a;
+    .step-num{
+      width:22px;
+      height:22px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#fff;
+      font-size:0.74rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:4px;
     }
 
-    .price-card {
-      border-radius: 18px;
-      border: 1px solid #e5e7eb;
-      background: #f8fafc;
-      padding: 1rem;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
-      font-size: 0.86rem;
+    .step-title{
+      font-weight:600;
+      margin-bottom:3px;
     }
 
-    .price-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin: 0.5rem 0 0.8rem;
+    .price-card{
+      background:var(--panel);
+      border-radius:var(--radius-md);
+      border:1px solid var(--border);
+      box-shadow:0 16px 30px rgba(0,0,0,0.04);
+      padding:14px 16px 16px;
+      font-size:0.86rem;
     }
 
-    .price-chip {
-      font-size: 0.76rem;
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
-      border: 1px dashed #cbd5e1;
-      background: #ffffff;
-      color: #475569;
+    .price-chip-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin:8px 0 10px;
     }
 
-    .price-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 0.4rem;
-      font-size: 0.8rem;
+    .price-chip{
+      font-size:0.76rem;
+      padding:3px 9px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--text-muted);
+    }
+
+    .price-table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:0.8rem;
+      margin-top:4px;
     }
 
     .price-table th,
-    .price-table td {
-      padding: 0.35rem 0.25rem;
-      border-bottom: 1px solid #e5e7eb;
-      text-align: left;
+    .price-table td{
+      padding:4px 2px;
+      border-bottom:1px solid #e5e5ea;
+      text-align:left;
     }
 
-    .price-table th {
-      font-weight: 600;
-      color: #0f172a;
-    }
-
-    .price-note {
-      margin-top: 0.5rem;
-      font-size: 0.76rem;
-      color: #6b7280;
+    .price-note{
+      font-size:0.78rem;
+      color:var(--text-muted);
+      margin-top:6px;
     }
 
     /* FAQ */
 
-    .faq-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-      gap: 1.4rem;
-      margin-top: 1rem;
+    .faq-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1.1fr);
+      gap:22px;
     }
 
-    .faq-item {
-      border-radius: 16px;
-      border: 1px solid #e5e7eb;
-      padding: 0.8rem 0.9rem;
-      background: #ffffff;
-      font-size: 0.86rem;
-      margin-bottom: 0.6rem;
+    .faq-item{
+      background:var(--panel);
+      border-radius:16px;
+      border:1px solid var(--border);
+      padding:10px 12px 11px;
+      font-size:0.86rem;
     }
 
-    .faq-q {
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-      color: #0f172a;
+    .faq-q{
+      font-weight:600;
+      margin-bottom:4px;
     }
 
     /* CONTACT */
 
-    .contact-card {
-      border-radius: 18px;
-      border: 2px solid var(--swift-blue);
-      background: #0f172a;
-      color: #e5e7eb;
-      padding: 1.4rem 1.2rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1.3rem;
-      align-items: center;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+    .contact-card{
+      background:#1d1d1f;
+      border-radius:var(--radius-lg);
+      padding:18px 18px 18px;
+      color:#f5f5f7;
+      display:grid;
+      grid-template-columns:minmax(0,1.3fr) minmax(0,1.1fr);
+      gap:20px;
+      box-shadow:0 22px 50px rgba(0,0,0,0.4);
     }
 
-    .contact-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-      color: #facc15;
+    .contact-title{
+      font-size:1.35rem;
+      font-weight:600;
+      margin-bottom:6px;
     }
 
-    .contact-text {
-      font-size: 0.9rem;
-      color: #cbd5f5;
-      margin-bottom: 0.8rem;
+    .contact-text{
+      font-size:0.9rem;
+      color:#d2d2d7;
+      margin-bottom:10px;
     }
 
-    .contact-details {
-      font-size: 0.82rem;
-      display: grid;
-      gap: 0.25rem;
-      margin-top: 0.5rem;
-      color: #e5e7eb;
+    .contact-details{
+      font-size:0.82rem;
+      display:grid;
+      gap:3px;
+      color:#e5e5ea;
     }
 
-    .contact-details span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
+    .contact-details span::before{
+      content:"• ";
+      color:var(--accent);
     }
 
-    .contact-details span::before {
-      content: "•";
-      color: var(--swift-yellow);
-    }
-
-    .contact-right-note {
-      font-size: 0.8rem;
-      color: #cbd5f5;
-      margin-bottom: 0.7rem;
+    .contact-note{
+      font-size:0.82rem;
+      color:#d2d2d7;
+      margin-bottom:8px;
     }
 
     /* FOOTER */
 
-    footer {
-      border-top: 1px solid #e5e7eb;
-      padding: 1.4rem 0 1.6rem;
-      margin-top: auto;
-      background: #f9fafb;
+    footer{
+      border-top:1px solid var(--border);
+      padding:16px 0 18px;
+      background:#f2f2f7;
+      margin-top:auto;
+      font-size:0.8rem;
+      color:var(--text-muted);
     }
 
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      font-size: 0.8rem;
-      color: #6b7280;
+    .footer-inner{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
     }
 
-    .footer-inner strong {
-      color: #111827;
-    }
+    .footer-inner strong{ color:var(--text-main); }
 
     /* CHATBOT */
 
-    .chatbot-toggle {
-      position: fixed;
-      right: 1.1rem;
-      bottom: 1.1rem;
-      z-index: 50;
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      border: 3px solid var(--swift-yellow);
-      background: var(--swift-blue);
-      color: white;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.45);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.35rem;
-      cursor: pointer;
+    .chatbot-toggle{
+      position:fixed;
+      right:1.1rem;
+      bottom:1.1rem;
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      border:2px solid var(--accent-soft);
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 18px 40px rgba(0,0,0,0.3);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.3rem;
+      cursor:pointer;
+      z-index:50;
     }
 
-    .chatbot-badge {
-      position: absolute;
-      top: 6px;
-      right: 6px;
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.4);
+    .chatbot-badge{
+      position:absolute;
+      top:7px;
+      right:7px;
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:#30d158;
+      box-shadow:0 0 0 4px rgba(48,209,88,0.4);
     }
 
-    .chatbot-panel {
-      position: fixed;
-      right: 1.1rem;
-      bottom: 5.1rem;
-      width: 320px;
-      max-width: calc(100% - 2.4rem);
-      border-radius: 20px;
-      box-shadow: var(--shadow-soft);
-      background: #f8fafc;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      display: none;
-      flex-direction: column;
-      z-index: 49;
-      overflow: hidden;
+    .chatbot-panel{
+      position:fixed;
+      right:1.1rem;
+      bottom:4.9rem;
+      width:320px;
+      max-width:calc(100% - 2.4rem);
+      background:var(--panel);
+      border-radius:20px;
+      box-shadow:var(--shadow-soft);
+      border:1px solid var(--border);
+      display:none;
+      flex-direction:column;
+      overflow:hidden;
+      z-index:49;
     }
 
-    .chatbot-panel.open {
-      display: flex;
+    .chatbot-panel.open{ display:flex; }
+
+    .chatbot-header{
+      padding:8px 10px;
+      background:linear-gradient(135deg,var(--accent),#34c759);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
     }
 
-    .chatbot-header {
-      padding: 0.8rem 0.9rem;
-      background: linear-gradient(135deg, var(--swift-blue), #0ea5e9);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
+    .chatbot-header-main{
+      display:flex;
+      align-items:center;
+      gap:7px;
     }
 
-    .chatbot-header-main {
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
+    .chatbot-avatar{
+      width:28px;
+      height:28px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.7);
+      background:rgba(0,0,0,0.2);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:0.9rem;
+      font-weight:600;
     }
 
-    .chatbot-avatar {
-      width: 30px;
-      height: 30px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      font-weight: 700;
+    .chatbot-title{
+      font-size:0.82rem;
+      font-weight:600;
     }
 
-    .chatbot-title {
-      font-size: 0.85rem;
-      font-weight: 600;
+    .chatbot-sub{
+      font-size:0.7rem;
+      opacity:.9;
     }
 
-    .chatbot-sub {
-      font-size: 0.7rem;
-      opacity: 0.85;
+    .chatbot-close{
+      width:22px;
+      height:22px;
+      border-radius:999px;
+      border:none;
+      background:rgba(0,0,0,0.2);
+      color:#fff;
+      font-size:0.86rem;
+      cursor:pointer;
     }
 
-    .chatbot-close {
-      border: none;
-      background: rgba(15, 23, 42, 0.15);
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      color: white;
-      font-size: 0.8rem;
-      cursor: pointer;
+    .chatbot-body{
+      padding:8px 10px;
+      max-height:270px;
+      overflow-y:auto;
+      font-size:0.78rem;
+      background:#f5f5f7;
     }
 
-    .chatbot-body {
-      padding: 0.75rem 0.9rem;
-      max-height: 280px;
-      overflow-y: auto;
-      font-size: 0.78rem;
-      background: #f8fafc;
+    .chat-msg{
+      margin-bottom:6px;
+      display:flex;
     }
 
-    .chat-msg {
-      margin-bottom: 0.55rem;
-      display: flex;
+    .chat-msg.bot .bubble{
+      background:#fff;
+      border-radius:14px 14px 14px 4px;
+      color:#111;
     }
 
-    .chat-msg.bot .bubble {
-      background: white;
-      border-radius: 16px 16px 16px 4px;
-      color: #111827;
+    .chat-msg.user{
+      justify-content:flex-end;
     }
 
-    .chat-msg.user {
-      justify-content: flex-end;
+    .chat-msg.user .bubble{
+      background:var(--accent);
+      color:#fff;
+      border-radius:14px 14px 4px 14px;
     }
 
-    .chat-msg.user .bubble {
-      background: var(--swift-blue);
-      color: white;
-      border-radius: 16px 16px 4px 16px;
+    .bubble{
+      padding:5px 8px;
+      max-width:90%;
+      box-shadow:0 6px 14px rgba(0,0,0,0.12);
     }
 
-    .bubble {
-      padding: 0.45rem 0.7rem;
-      max-width: 90%;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.16);
+    .chat-quick{
+      margin-top:4px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:5px;
     }
 
-    .chat-quick {
-      margin-top: 0.4rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
+    .chat-chip{
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      padding:3px 8px;
+      font-size:0.72rem;
+      cursor:pointer;
+      color:#424245;
     }
 
-    .chat-chip {
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      background: white;
-      padding: 0.25rem 0.6rem;
-      font-size: 0.72rem;
-      cursor: pointer;
-      color: #334155;
+    .chat-footer{
+      border-top:1px solid var(--border);
+      padding:6px 10px 8px;
+      background:#f2f2f7;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      font-size:0.72rem;
+      color:var(--text-muted);
     }
 
-    .chat-footer {
-      border-top: 1px solid #e2e8f0;
-      padding: 0.55rem 0.9rem 0.7rem;
-      background: #f1f5f9;
-      display: flex;
-      gap: 0.4rem;
-      align-items: center;
-    }
-
-    .chat-note {
-      font-size: 0.7rem;
-      color: #64748b;
-      flex: 1;
-    }
-
-    .chat-footer .btn-whatsapp-small {
-      border-radius: 999px;
-      border: none;
-      padding: 0.35rem 0.6rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      background: var(--swift-yellow);
-      color: #0f172a;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    /* ANIMATION */
-
-    @keyframes slow-fade {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .chat-footer button{
+      border-radius:999px;
+      border:none;
+      padding:4px 8px;
+      font-size:0.72rem;
+      font-weight:600;
+      background:var(--accent);
+      color:#fff;
+      cursor:pointer;
+      white-space:nowrap;
     }
 
     /* RESPONSIVE */
 
-    @media (max-width: 980px) {
-      nav {
-        display: none;
-      }
+    @media (max-width:980px){
+      nav{ display:none; }
     }
 
-    @media (max-width: 820px) {
+    @media (max-width:820px){
+      .hero{ padding-top:70px; }
       .hero-grid,
-      .info-grid,
       .cards,
-      .contact-card,
-      .faq-grid {
-        grid-template-columns: minmax(0, 1fr);
+      .info-grid,
+      .faq-grid,
+      .contact-card{
+        grid-template-columns:minmax(0,1fr);
       }
-
-      .hero {
-        padding-top: 2.1rem;
-      }
-
-      .hero-card {
-        order: -1;
-      }
-
-      .header-inner {
-        align-items: flex-start;
-      }
+      .hero-media{ order:-1; }
     }
 
-    @media (max-width: 520px) {
-      .hero-actions {
-        flex-direction: column;
-        align-items: flex-start;
+    @media (max-width:520px){
+      .hero-actions{
+        flex-direction:column;
+        align-items:flex-start;
       }
-
-      .chatbot-panel {
-        right: 0.6rem;
-        left: 0.6rem;
-        width: auto;
+      .chatbot-panel{
+        right:0.6rem;
+        left:0.6rem;
+        width:auto;
       }
-
-      .chatbot-toggle {
-        right: 0.8rem;
-        bottom: 0.9rem;
-      }
-
-      .contact-card {
-        padding: 1.1rem 1rem;
+      .chatbot-toggle{
+        right:0.8rem;
+        bottom:0.9rem;
       }
     }
   </style>
@@ -922,11 +765,12 @@
       <div class="header-inner">
         <div class="brand">
           <div class="brand-logo">
-            <!-- Usa aqui o logo que mostraste, guardado como swift-logo.png -->
-            <img src="swift-logo.png" alt="Swift Cleaning Service logo" />
+            <!-- Logo do cliente (ficheiro swift-logo.png no repositório) -->
+            <img src="swift-logo.png" alt="Swift Cleaning logo" />
           </div>
           <div class="brand-text">
-            <div class="brand-sub">JERSEY • PROFESSIONAL CLEANING</div>
+            <div class="brand-name">Swift Cleaning</div>
+            <div class="brand-sub">Jersey • Professional Cleaning</div>
           </div>
         </div>
 
@@ -939,56 +783,37 @@
         </nav>
 
         <div class="header-cta">
-          <div class="small-pill">WhatsApp only • Flexible hours</div>
-          <a
-            class="btn-whatsapp"
-            href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20a%20cleaning%20quote."
-            target="_blank"
-            rel="noopener"
-          >
-            <span class="icon">💬</span>
-            <span>Chat on WhatsApp</span>
+          <span class="pill-small">WhatsApp only • Flexible hours</span>
+          <a href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">
+            <button class="btn-wa" type="button">
+              <span class="icon">💬</span>
+              <span>Chat on WhatsApp</span>
+            </button>
           </a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
   <main id="home">
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
           <div>
-            <div class="eyebrow">
-              <span class="eyebrow-dot"></span>
-              <span>Local cleaning for homes, offices and buildings</span>
-            </div>
-
+            <div class="hero-eyebrow">Local cleaning for homes, offices & buildings</div>
             <h1 class="hero-title">
-              Professional <span class="highlight">Cleaning Services</span> in
-              Jersey
+              Professional <span>Cleaning Services</span> in Jersey
             </h1>
-
             <p class="hero-sub">
-              Regular and one-off cleaning for houses, flats, offices and
-              building staircases. Focus on kitchens, bathrooms and ovens –
-              always fitted around your schedule.
+              Regular and one-off cleaning for houses, flats, offices and building staircases. 
+              Focus on kitchens, bathrooms and ovens – always fitted around your schedule.
             </p>
 
-            <div class="hero-badges">
-              <div class="hero-badge">
-                <span class="dot"></span>
-                <span>Houses & apartments</span>
-              </div>
-              <div class="hero-badge">
-                <span class="dot"></span>
-                <span>Offices & small businesses</span>
-              </div>
-              <div class="hero-badge">
-                <span class="dot"></span>
-                <span>Building staircases & communal areas</span>
-              </div>
+            <div class="hero-tags">
+              <span class="tag-pill">Houses & apartments</span>
+              <span class="tag-pill">Offices & small businesses</span>
+              <span class="tag-pill">Building staircases & communal areas</span>
             </div>
 
             <div class="hero-actions">
@@ -1001,38 +826,22 @@
                   Request a free quote on WhatsApp
                 </button>
               </a>
-
               <a href="#services">
                 <button class="btn-secondary" type="button">
-                  View services ↓
+                  View services
                 </button>
               </a>
             </div>
 
             <p class="hero-note">
-              Share a few details about your property on WhatsApp and receive a
-              personalised quote. All equipment and products can be provided on
-              request.
+              Share a few details about your property on WhatsApp and receive a personalised quote.
+              All equipment and products can be provided on request.
             </p>
           </div>
 
-          <aside class="hero-card">
-            <div class="hero-photo">
-              <!-- Logo grande no cartão do lado direito -->
-              <img
-                src="swift-logo.png"
-                alt="Swift Cleaning Service logo"
-                class="hero-photo-img"
-              />
-            </div>
-            <p class="hero-tagline">
-              Swift Cleaning keeps your home, office or building staircase
-              spotless so you can focus on your day.
-            </p>
-            <div class="hero-meta">
-              <span>Homes, offices and buildings across Jersey</span>
-              <span>Flexible times – mornings, evenings & weekends</span>
-            </div>
+          <aside class="hero-media" aria-label="Cleaning in a modern home">
+            <!-- HERO IMAGE -->
+            <img src="https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg" alt="Cleaner working in a bright modern living room" />
           </aside>
         </div>
       </div>
@@ -1043,132 +852,133 @@
       <div class="container">
         <div class="section-header">
           <div class="section-kicker">Services</div>
-          <h2 class="section-title">
-            What Swift Cleaning can help you with
-          </h2>
+          <h2 class="section-title">What Swift Cleaning can help you with</h2>
           <p class="section-sub">
-            Simple, flexible cleaning for busy families and businesses in
-            Jersey – focused on houses, offices and building staircases. One-off
-            or regular visits, depending on what you need.
+            Simple, flexible cleaning for busy families and businesses in Jersey – focused on houses,
+            offices and building staircases. One-off or regular visits, depending on what you need.
           </p>
         </div>
 
         <div class="cards">
           <!-- Home cleaning -->
           <article class="card">
-            <div class="card-icon">🏠</div>
-            <h3 class="card-title">House & apartment cleaning</h3>
-            <p class="card-text">
-              Regular or one-off cleaning to keep your home fresh – with
-              attention to kitchens, bathrooms and high-touch areas.
-            </p>
-            <ul class="list">
-              <li>Bedrooms, living areas and hallways</li>
-              <li>Thorough kitchen and bathroom cleaning</li>
-              <li>Dusting, hoovering, mopping and surfaces</li>
-            </ul>
-            <span class="card-tag">Perfect for busy homes</span>
+            <img src="https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg" alt="Cleaner vacuuming a bright living room" />
+            <div class="card-body">
+              <div class="card-title">House & apartment cleaning</div>
+              <p class="card-text">
+                Regular or one-off cleaning to keep your home fresh – with attention to kitchens, bathrooms and high-touch areas.
+              </p>
+              <ul>
+                <li>Bedrooms, living areas and hallways</li>
+                <li>Thorough kitchen and bathroom cleaning</li>
+                <li>Dusting, hoovering, mopping and surfaces</li>
+              </ul>
+              <span class="card-tag">Perfect for busy homes</span>
+            </div>
           </article>
 
           <!-- Office cleaning -->
           <article class="card">
-            <div class="card-icon">🧹</div>
-            <h3 class="card-title">Office & workplace cleaning</h3>
-            <p class="card-text">
-              Cleaning for small offices and workplaces so desks, kitchens and
-              toilets are ready for staff and visitors.
-            </p>
-            <ul class="list">
-              <li>Desks, bins and communal areas</li>
-              <li>Office kitchens and toilets</li>
-              <li>Morning or evening visits to suit your hours</li>
-            </ul>
-            <span class="card-tag">Flexible to your schedule</span>
+            <img src="https://images.pexels.com/photos/213162/pexels-photo-213162.jpeg" alt="Modern office with desks and computers" />
+            <div class="card-body">
+              <div class="card-title">Office & workplace cleaning</div>
+              <p class="card-text">
+                Cleaning for small offices and workplaces so desks, kitchens and toilets are ready for staff and visitors.
+              </p>
+              <ul>
+                <li>Desks, bins and communal areas</li>
+                <li>Office kitchens and toilets</li>
+                <li>Morning or evening visits to suit your hours</li>
+              </ul>
+              <span class="card-tag">Flexible to your schedule</span>
+            </div>
           </article>
 
-          <!-- Staircases & buildings -->
+          <!-- Staircases & communal areas -->
           <article class="card">
-            <div class="card-icon">🏢</div>
-            <h3 class="card-title">Staircases & communal areas</h3>
-            <p class="card-text">
-              Cleaning for stairwells and shared areas in buildings and
-              blocks – keeping entrances tidy and cared for.
-            </p>
-            <ul class="list">
-              <li>Staircases, handrails and landings</li>
-              <li>Entrance doors, lobbies and corridors</li>
-              <li>Weekly, fortnightly or monthly schedules</li>
-            </ul>
-            <span class="card-tag">Ideal for buildings & blocks</span>
+            <img src="https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg" alt="Clean staircase and corridors in a building" />
+            <div class="card-body">
+              <div class="card-title">Staircases & communal areas</div>
+              <p class="card-text">
+                Cleaning for stairwells and shared areas in buildings and blocks – keeping entrances tidy and cared for.
+              </p>
+              <ul>
+                <li>Staircases, handrails and landings</li>
+                <li>Entrance doors, lobbies and corridors</li>
+                <li>Weekly, fortnightly or monthly schedules</li>
+              </ul>
+              <span class="card-tag">Ideal for buildings & blocks</span>
+            </div>
           </article>
         </div>
 
-        <div class="cards" style="margin-top:1rem;">
-          <!-- Add-ons -->
+        <div class="cards" style="margin-top:18px;">
+          <!-- Deep kitchen & oven -->
           <article class="card">
-            <div class="card-icon">🔥</div>
-            <h3 class="card-title">Deep kitchen & oven cleaning</h3>
-            <p class="card-text">
-              Extra focus on ovens, hobs, cupboards and tiles as part of a deep
-              clean or regular visit.
-            </p>
-            <ul class="list">
-              <li>Oven, hob and extractor front cleaning</li>
-              <li>Worktops, cupboard doors and splashbacks</li>
-              <li>Great add-on for moving in or out</li>
-            </ul>
-            <span class="card-tag">Book as an add-on</span>
+            <img src="https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg" alt="Cleaner focusing on details in the kitchen" />
+            <div class="card-body">
+              <div class="card-title">Deep kitchen & oven cleaning</div>
+              <p class="card-text">
+                Extra focus on ovens, hobs, cupboards and tiles as part of a deep clean or regular visit.
+              </p>
+              <ul>
+                <li>Oven, hob and extractor front cleaning</li>
+                <li>Worktops, cupboard doors and splashbacks</li>
+                <li>Great add-on for moving in or out</li>
+              </ul>
+              <span class="card-tag">Book as an add-on</span>
+            </div>
           </article>
 
+          <!-- Deep & one-off -->
           <article class="card">
-            <div class="card-icon">🧼</div>
-            <h3 class="card-title">Deep & one-off cleaning</h3>
-            <p class="card-text">
-              A more detailed clean for when a standard visit isn’t enough –
-              after building work, before guests or moving.
-            </p>
-            <ul class="list">
-              <li>Extra time spent on bathrooms & kitchens</li>
-              <li>Skirting boards, doors and switches</li>
-              <li>Tailored checklist to your property</li>
-            </ul>
-            <span class="card-tag">For a full refresh</span>
+            <img src="https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg" alt="Cleaner preparing a living room after work" />
+            <div class="card-body">
+              <div class="card-title">Deep & one-off cleaning</div>
+              <p class="card-text">
+                A more detailed clean for when a standard visit isn’t enough – after building work, before guests or moving.
+              </p>
+              <ul>
+                <li>Extra time spent on bathrooms & kitchens</li>
+                <li>Skirting boards, doors and switches</li>
+                <li>Tailored checklist to your property</li>
+              </ul>
+              <span class="card-tag">For a full refresh</span>
+            </div>
           </article>
 
+          <!-- Custom plans -->
           <article class="card">
-            <div class="card-icon">✨</div>
-            <h3 class="card-title">Custom cleaning plans</h3>
-            <p class="card-text">
-              Every home and office is different. Swift Cleaning can follow
-              your own checklist and priorities.
-            </p>
-            <ul class="list">
-              <li>Weekly, fortnightly or monthly routines</li>
-              <li>Focus on the rooms that matter most</li>
-              <li>Clear communication before each visit</li>
-            </ul>
-            <span class="card-tag">Made around your needs</span>
+            <img src="https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg" alt="Cleaner organising supplies for a visit" />
+            <div class="card-body">
+              <div class="card-title">Custom cleaning plans</div>
+              <p class="card-text">
+                Every home and office is different. Swift Cleaning can follow your own checklist and priorities.
+              </p>
+              <ul>
+                <li>Weekly, fortnightly or monthly routines</li>
+                <li>Focus on the rooms that matter most</li>
+                <li>Clear communication before each visit</li>
+              </ul>
+              <span class="card-tag">Made around your needs</span>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- WHY + HOW / PRICES -->
+    <!-- WHY / HOW -->
     <section class="section" id="how">
       <div class="container">
         <div class="info-grid">
           <div>
             <div class="section-header">
               <div class="section-kicker">Why Swift Cleaning</div>
-              <h2 class="section-title">
-                Local, insured and detail-focused
-              </h2>
+              <h2 class="section-title">Local, insured and detail-focused</h2>
             </div>
             <p class="section-sub">
-              Swift Cleaning is a local Jersey service that understands what
-              homes, offices and buildings need to feel truly clean. Each visit
-              is planned around your priorities, with a clear checklist so
-              important details aren’t missed.
+              Swift Cleaning is a local Jersey service that understands what homes, offices and buildings need 
+              to feel truly clean. Each visit is planned around your priorities, with a clear checklist so important details aren’t missed.
             </p>
 
             <div class="steps">
@@ -1176,24 +986,21 @@
                 <div class="step-num">1</div>
                 <div class="step-title">Local cleaners</div>
                 <p>
-                  Based in Jersey, familiar with different areas, building
-                  types and access arrangements.
+                  Based in Jersey, familiar with different areas, building types and access arrangements.
                 </p>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-title">Insured & reliable</div>
                 <p>
-                  Fully insured service for peace of mind, with clear
-                  communication before each job.
+                  Service with appropriate insurance for peace of mind, and clear communication before each job.
                 </p>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-title">Flexible timings</div>
                 <p>
-                  Mornings, evenings and some weekends available – agreed in
-                  advance via WhatsApp.
+                  Mornings, evenings and some weekends – agreed in advance via WhatsApp.
                 </p>
               </div>
             </div>
@@ -1207,9 +1014,7 @@
 
             <div class="price-card">
               <p>
-                Booking with Swift Cleaning is straightforward – everything is
-                done through WhatsApp so you can send photos, questions and
-                preferred times easily.
+                Booking with Swift Cleaning is straightforward – everything is done through WhatsApp so you can send photos, questions and preferred times easily.
               </p>
 
               <div class="price-chip-row">
@@ -1218,7 +1023,7 @@
                 <span class="price-chip">Step 3 – Enjoy a clean space</span>
               </div>
 
-              <table class="price-table" aria-label="Example cleaning quotes">
+              <table class="price-table" aria-label="Example cleaning jobs and frequency">
                 <thead>
                   <tr>
                     <th>Typical job</th>
@@ -1246,12 +1051,11 @@
               </table>
 
               <p class="price-note">
-                Prices depend on property size, condition and how often you’d
-                like cleaning. You’ll always receive a clear quote in writing on
-                WhatsApp before any work is booked.
+                Prices depend on property size, condition and how often you’d like cleaning. 
+                You’ll always receive a clear quote in writing on WhatsApp before any work is booked.
               </p>
 
-              <div style="margin-top:0.7rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <div style="margin-top:8px;">
                 <a
                   href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20to%20ask%20about%20cleaning%20availability."
                   target="_blank"
@@ -1275,8 +1079,7 @@
           <div class="section-kicker">Questions</div>
           <h2 class="section-title">Frequently asked questions</h2>
           <p class="section-sub">
-            A few common questions people in Jersey ask before they book
-            cleaning with Swift Cleaning.
+            A few common questions people in Jersey ask before they book cleaning with Swift Cleaning.
           </p>
         </div>
 
@@ -1285,32 +1088,22 @@
             <div class="faq-item">
               <div class="faq-q">Do you bring your own products?</div>
               <p>
-                Yes – Swift Cleaning can bring all the cleaning products and
-                basic equipment needed. If you prefer your own products
-                (sensitive skin, specific brands, eco-friendly), this can be
-                agreed easily by message.
+                Yes – Swift Cleaning can bring all the cleaning products and basic equipment needed. 
+                If you prefer your own products (sensitive skin, specific brands, eco-friendly), this can be agreed easily by message.
               </p>
             </div>
-
             <div class="faq-item">
               <div class="faq-q">Which areas of Jersey do you cover?</div>
               <p>
-                Swift Cleaning works across the island – including St Helier,
-                St Clement, St Saviour, St Brelade and surrounding parishes.
-                When you send a WhatsApp message, please mention your road or
-                area so travel time can be included in the quote.
+                Swift Cleaning works across the island – including St Helier, St Clement, St Saviour, St Brelade and surrounding parishes. 
+                When you send a WhatsApp message, please mention your road or area so travel time can be included in the quote.
               </p>
             </div>
-
             <div class="faq-item">
-              <div class="faq-q">
-                Can I book regular weekly or fortnightly cleaning?
-              </div>
+              <div class="faq-q">Can I book regular weekly or fortnightly cleaning?</div>
               <p>
-                Yes – many clients choose a weekly or fortnightly visit, while
-                others prefer one-off deep cleans. The schedule is set up in
-                advance on WhatsApp and can be adjusted if your situation
-                changes.
+                Yes – many clients choose a weekly or fortnightly visit, while others prefer one-off deep cleans. 
+                The schedule is set up in advance on WhatsApp and can be adjusted if your situation changes.
               </p>
             </div>
           </div>
@@ -1319,34 +1112,23 @@
             <div class="faq-item">
               <div class="faq-q">Are you insured?</div>
               <p>
-                Swift Cleaning works with appropriate insurance for domestic and
-                light commercial cleaning. Full details can be shared on
-                request, so you always know who is coming into your property.
+                Swift Cleaning works with appropriate insurance for domestic and light commercial cleaning. 
+                Full details can be shared on request, so you always know who is coming into your property.
               </p>
             </div>
-
             <div class="faq-item">
-              <div class="faq-q">
-                Do I need to be at home or at the office during the clean?
-              </div>
+              <div class="faq-q">Do I need to be at home or at the office during the clean?</div>
               <p>
-                Not necessarily. Some clients prefer to be at home, others
-                choose to provide access via key or concierge. Access is always
-                agreed in advance, and communication is kept clear before and
-                after every visit.
+                Not necessarily. Some clients prefer to be at home, others choose to provide access via key or concierge. 
+                Access is always agreed in advance, and communication is kept clear before and after every visit.
               </p>
             </div>
-
             <div class="faq-item">
-              <div class="faq-q">
-                How do I get started if I’m not sure what I need?
-              </div>
+              <div class="faq-q">How do I get started if I’m not sure what I need?</div>
               <p>
-                Just send a short WhatsApp message describing your property
-                (house, flat, office or building staircase), how many rooms
-                there are and how often you think you’d like cleaning. If
-                helpful, you can send photos and Swift Cleaning will suggest a
-                plan and quote.
+                Just send a short WhatsApp message describing your property (house, flat, office or building staircase), 
+                how many rooms there are and how often you think you’d like cleaning. 
+                If helpful, you can send photos and Swift Cleaning will suggest a plan and quote.
               </p>
             </div>
           </div>
@@ -1359,13 +1141,10 @@
       <div class="container">
         <div class="section-header">
           <div class="section-kicker">Contact</div>
-          <h2 class="section-title">
-            Ready to make your space feel freshly cleaned?
-          </h2>
+          <h2 class="section-title">Ready to make your space feel freshly cleaned?</h2>
           <p class="section-sub">
-            The quickest way to get a quote is by sending a WhatsApp message
-            with a few details. You can also save the number to your phone for
-            future bookings.
+            The quickest way to get a quote is by sending a WhatsApp message with a few details. 
+            You can also save the number to your phone for future bookings.
           </p>
         </div>
 
@@ -1373,37 +1152,31 @@
           <div>
             <div class="contact-title">Swift Cleaning • Jersey</div>
             <p class="contact-text">
-              Professional cleaning for houses, flats, offices and building
-              staircases across Jersey – with friendly communication and clear
-              pricing.
+              Professional cleaning for houses, flats, offices and building staircases across Jersey – with friendly communication and clear pricing.
             </p>
             <div class="contact-details">
               <span>WhatsApp: +44 7700 335389</span>
               <span>Location: Jersey, Channel Islands</span>
-              <span>Bookings: WhatsApp message only</span>
+              <span>Bookings and quotes via WhatsApp only</span>
             </div>
           </div>
 
           <div>
-            <p class="contact-right-note">
-              Click below to open a WhatsApp chat. You can copy and send the
-              suggested message, then add your own details.
+            <p class="contact-note">
+              Click below to open a WhatsApp chat. You can copy and send the suggested message, then add your own details.
             </p>
             <a
               href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20to%20ask%20about%20cleaning%20for%20my%20home%20%2F%20office%20in%20Jersey.%20My%20area%20is%20...%20and%20I%27m%20looking%20for%20cleaning%20on%20these%20days%3A%20..."
               target="_blank"
               rel="noopener"
             >
-              <button class="btn-whatsapp" type="button" style="margin-bottom:0.6rem;">
-                <span class="icon">💬</span>
-                <span>Open WhatsApp & start chat</span>
+              <button class="btn-primary" type="button">
+                Open WhatsApp & start chat
               </button>
             </a>
-            <p class="contact-right-note">
-              Typical information that helps with a quote:
-              property type (house, flat, office or staircase), number of
-              bedrooms/offices, area of Jersey and how often you’d like
-              cleaning.
+            <p class="contact-note">
+              Helpful details for a quote: property type (house, flat, office or staircase), number of bedrooms/offices, 
+              area of Jersey and how often you’d like cleaning.
             </p>
           </div>
         </div>
@@ -1468,41 +1241,38 @@
         class="chat-chip"
         data-question="I'd like a quote for cleaning my house or apartment in Jersey."
       >
-        <span>Quote for my home</span>
+        Quote for my home
       </button>
       <button
         class="chat-chip"
         data-question="Do you offer regular weekly or fortnightly cleaning for homes or offices?"
       >
-        <span>Regular cleaning</span>
+        Regular cleaning
       </button>
       <button
         class="chat-chip"
         data-question="I need the staircases and communal areas of a building cleaned."
       >
-        <span>Building staircases</span>
+        Building staircases
       </button>
       <button
         class="chat-chip"
         data-question="Can you bring all cleaning products and equipment?"
       >
-        <span>Products & equipment</span>
+        Products &amp; equipment
       </button>
     </div>
   </div>
 
   <div class="chat-footer">
-    <div class="chat-note">
-      For detailed quotes we’ll reply directly on WhatsApp.
-    </div>
-    <button class="btn-whatsapp-small" id="chatWhatsApp" type="button">
+    <span>For detailed quotes we’ll reply directly on WhatsApp.</span>
+    <button id="chatWhatsApp" type="button">
       Open WhatsApp
     </button>
   </div>
 </div>
 
 <script>
-  // CHATBOT
   const chatbotToggle = document.getElementById("chatbotToggle");
   const chatbotPanel = document.getElementById("chatbotPanel");
   const chatbotClose = document.getElementById("chatbotClose");
@@ -1512,9 +1282,7 @@
 
   function toggleChatbot(open) {
     const shouldOpen =
-      open !== undefined
-        ? open
-        : !chatbotPanel.classList.contains("open");
+      open !== undefined ? open : !chatbotPanel.classList.contains("open");
     chatbotPanel.classList.toggle("open", shouldOpen);
   }
 
@@ -1556,4 +1324,4 @@
   });
 </script>
 </body>
-          </html>
+                </html>
