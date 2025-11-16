@@ -50,8 +50,6 @@
       display: block;
     }
 
-    /* LAYOUT */
-
     .page {
       min-height: 100vh;
       display: flex;
@@ -73,14 +71,14 @@
       z-index: 40;
       backdrop-filter: blur(12px);
       background: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      border-bottom: 3px solid var(--swift-yellow);
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.9rem 0;
+      padding: 0.7rem 0;
       gap: 1rem;
     }
 
@@ -90,34 +88,19 @@
       gap: 0.75rem;
     }
 
-    .logo-circle {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: white;
-      border: 2px solid var(--swift-yellow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    .brand-logo {
+      height: 48px;
     }
 
-    .logo-circle img {
-      width: 130%;
-      object-fit: contain;
+    .brand-logo img {
+      height: 100%;
+      width: auto;
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
-    }
-
-    .brand-title {
-      font-weight: 800;
-      font-size: 1rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--swift-blue);
+      justify-content: center;
     }
 
     .brand-sub {
@@ -135,8 +118,9 @@
     }
 
     nav a {
-      color: #64748b;
+      color: #475569;
       position: relative;
+      font-weight: 500;
     }
 
     nav a::after {
@@ -146,7 +130,7 @@
       bottom: -4px;
       width: 0;
       height: 2px;
-      background: var(--swift-blue);
+      background: var(--swift-yellow);
       transition: width 0.2s ease-out;
     }
 
@@ -169,8 +153,9 @@
       padding: 0.15rem 0.6rem;
       border-radius: 999px;
       border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      color: #64748b;
+      background: #fffbeb;
+      color: #92400e;
+      font-weight: 500;
     }
 
     .btn-whatsapp {
@@ -183,9 +168,9 @@
       gap: 0.4rem;
       font-size: 0.8rem;
       font-weight: 600;
-      color: white;
-      background: #22c55e;
-      box-shadow: 0 10px 24px rgba(34, 197, 94, 0.45);
+      color: #0f172a;
+      background: var(--swift-yellow);
+      box-shadow: 0 10px 24px rgba(234, 179, 8, 0.45);
       white-space: nowrap;
     }
 
@@ -193,24 +178,25 @@
       width: 18px;
       height: 18px;
       border-radius: 999px;
-      border: 2px solid rgba(255, 255, 255, 0.7);
+      border: 2px solid rgba(255, 255, 255, 0.9);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 0.75rem;
+      background: #ffffff;
+      color: var(--swift-blue);
     }
 
     /* HERO */
 
     .hero {
       padding: 3rem 0 3rem;
-      background: radial-gradient(
-          circle at top left,
-          #e0f2fe 0,
-          #eff6ff 30%,
-          #ffffff 65%
-        ),
-        linear-gradient(to bottom, #f5f7fb, #ffffff);
+      background: linear-gradient(
+        180deg,
+        #fffbea 0,
+        #ffffff 40%,
+        #f5f7fb 100%
+      );
     }
 
     .hero-grid {
@@ -226,9 +212,9 @@
       gap: 0.35rem;
       padding: 0.15rem 0.65rem;
       border-radius: 999px;
-      background: #ecfdf3;
-      border: 1px solid #bbf7d0;
-      color: #166534;
+      background: #fffbeb;
+      border: 1px solid #facc15;
+      color: #92400e;
       font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -240,8 +226,8 @@
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.25);
+      background: var(--swift-yellow);
+      box-shadow: 0 0 0 5px rgba(250, 204, 21, 0.35);
     }
 
     .hero-title {
@@ -273,9 +259,9 @@
       font-size: 0.75rem;
       padding: 0.2rem 0.75rem;
       border-radius: 999px;
-      border: 1px solid #d1d5db;
-      background: #f9fafb;
-      color: #4b5563;
+      border: 1px solid #facc15;
+      background: #fef9c3;
+      color: #713f12;
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
@@ -297,15 +283,15 @@
     }
 
     .btn-primary {
-      background: var(--swift-blue);
-      color: white;
+      background: var(--swift-yellow);
+      color: #0f172a;
       border-radius: 999px;
       padding: 0.7rem 1.5rem;
       border: none;
       font-size: 0.9rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
+      box-shadow: 0 14px 30px rgba(234, 179, 8, 0.5);
     }
 
     .btn-secondary {
@@ -316,7 +302,7 @@
       font-size: 0.86rem;
       font-weight: 500;
       cursor: pointer;
-      color: #0f172a;
+      color: var(--swift-blue);
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
@@ -344,14 +330,18 @@
       overflow: hidden;
       border: 1px solid rgba(148, 163, 184, 0.35);
       margin-bottom: 0.75rem;
-      background: #cbd5f5;
-      min-height: 190px;
+      background: #ffffff;
+      min-height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
     }
 
     .hero-photo-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: 80%;
+      height: auto;
+      object-fit: contain;
       display: block;
       opacity: 0;
       transform: translateY(10px);
@@ -466,8 +456,8 @@
       display: inline-flex;
       padding: 0.1rem 0.55rem;
       border-radius: 999px;
-      background: #ecfdf3;
-      color: #15803d;
+      background: #fef9c3;
+      color: #713f12;
       font-size: 0.72rem;
       font-weight: 600;
     }
@@ -605,7 +595,7 @@
 
     .contact-card {
       border-radius: 18px;
-      border: 1px solid #e5e7eb;
+      border: 2px solid var(--swift-blue);
       background: #0f172a;
       color: #e5e7eb;
       padding: 1.4rem 1.2rem;
@@ -613,13 +603,14 @@
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 1.3rem;
       align-items: center;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
     }
 
     .contact-title {
       font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 0.4rem;
-      color: #f9fafb;
+      color: #facc15;
     }
 
     .contact-text {
@@ -686,7 +677,7 @@
       width: 54px;
       height: 54px;
       border-radius: 50%;
-      border: none;
+      border: 3px solid var(--swift-yellow);
       background: var(--swift-blue);
       color: white;
       box-shadow: 0 16px 40px rgba(15, 23, 42, 0.45);
@@ -851,8 +842,8 @@
       padding: 0.35rem 0.6rem;
       font-size: 0.7rem;
       font-weight: 600;
-      background: #22c55e;
-      color: white;
+      background: var(--swift-yellow);
+      color: #0f172a;
       cursor: pointer;
       white-space: nowrap;
     }
@@ -930,12 +921,11 @@
     <div class="container">
       <div class="header-inner">
         <div class="brand">
-          <div class="logo-circle">
-            <!-- Garante que tens um ficheiro chamado 'swift-logo.png' no GitHub -->
-            <img src="swift-logo.png" alt="Swift Cleaning logo" />
+          <div class="brand-logo">
+            <!-- Usa aqui o logo que mostraste, guardado como swift-logo.png -->
+            <img src="swift-logo.png" alt="Swift Cleaning Service logo" />
           </div>
           <div class="brand-text">
-            <div class="brand-title">Swift Cleaning</div>
             <div class="brand-sub">JERSEY • PROFESSIONAL CLEANING</div>
           </div>
         </div>
@@ -1028,10 +1018,10 @@
 
           <aside class="hero-card">
             <div class="hero-photo">
-              <!-- Podes subir uma foto de equipa 'swift-team.jpg' ou outra imagem de limpeza -->
+              <!-- Logo grande no cartão do lado direito -->
               <img
-                src="swift-team.jpg"
-                alt="Swift Cleaning team at work in Jersey"
+                src="swift-logo.png"
+                alt="Swift Cleaning Service logo"
                 class="hero-photo-img"
               />
             </div>
@@ -1566,4 +1556,4 @@
   });
 </script>
 </body>
-</html>
+          </html>
