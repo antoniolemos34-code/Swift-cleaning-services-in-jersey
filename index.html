@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
   <title>Swift Cleaning Services in Jersey – Professional Cleaning</title>
 
-  <meta name="description" content="Swift Cleaning Services in Jersey – professional cleaners for homes, offices and building staircases. Regular and one-off cleaning with trusted local cleaners.">
+  <meta
+    name="description"
+    content="Swift Cleaning provides professional cleaning services for houses, flats, offices and building staircases across Jersey. Simple WhatsApp booking and flexible schedules."
+  />
 
   <style>
     :root {
@@ -26,10 +32,12 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: white;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #ffffff;
       color: #111827;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     a {
@@ -50,6 +58,15 @@
       flex-direction: column;
     }
 
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* HEADER */
+
     header {
       position: sticky;
       top: 0;
@@ -57,13 +74,6 @@
       backdrop-filter: blur(12px);
       background: rgba(255, 255, 255, 0.98);
       border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
     }
 
     .header-inner {
@@ -117,10 +127,50 @@
       letter-spacing: 0.16em;
     }
 
-    .lang-chat {
+    nav {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 1.5rem;
+      font-size: 0.86rem;
+    }
+
+    nav a {
+      color: #64748b;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--swift-blue);
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover {
+      color: var(--swift-blue);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .small-pill {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      color: #64748b;
     }
 
     .btn-whatsapp {
@@ -153,12 +203,19 @@
     /* HERO */
 
     .hero {
-      padding: 3rem 0 2.5rem;
+      padding: 3rem 0 3rem;
+      background: radial-gradient(
+          circle at top left,
+          #e0f2fe 0,
+          #eff6ff 30%,
+          #ffffff 65%
+        ),
+        linear-gradient(to bottom, #f5f7fb, #ffffff);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
       gap: 2.5rem;
       align-items: center;
     }
@@ -188,8 +245,8 @@
     }
 
     .hero-title {
-      font-size: clamp(2rem, 2.7vw + 1.2rem, 2.8rem);
-      line-height: 1.1;
+      font-size: clamp(2.1rem, 2.8vw + 1.2rem, 2.9rem);
+      line-height: 1.05;
       margin-bottom: 0.9rem;
       color: var(--swift-dark);
     }
@@ -243,7 +300,7 @@
       background: var(--swift-blue);
       color: white;
       border-radius: 999px;
-      padding: 0.65rem 1.35rem;
+      padding: 0.7rem 1.5rem;
       border: none;
       font-size: 0.9rem;
       font-weight: 600;
@@ -251,15 +308,29 @@
       box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
     }
 
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.7rem 1.3rem;
+      border: 1px solid #cbd5e1;
+      background: #ffffffd9;
+      font-size: 0.86rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: #0f172a;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
     .hero-note {
       font-size: 0.8rem;
       color: #6b7280;
     }
 
-    /* HERO CARD + FOTO ANIMADA */
+    /* HERO CARD */
 
     .hero-card {
-      background: radial-gradient(circle at top left, #e0f2fe 0, #eff6ff 30%, #ffffff 65%);
+      background: #ffffff;
       border-radius: 26px;
       padding: 1rem;
       box-shadow: var(--shadow-soft);
@@ -272,9 +343,9 @@
       border-radius: 18px;
       overflow: hidden;
       border: 1px solid rgba(148, 163, 184, 0.35);
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.75rem;
       background: #cbd5f5;
-      min-height: 180px;
+      min-height: 190px;
     }
 
     .hero-photo-img {
@@ -290,7 +361,7 @@
     .hero-tagline {
       font-size: 0.88rem;
       color: #1f2933;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.55rem;
       font-weight: 600;
     }
 
@@ -315,8 +386,12 @@
 
     /* SECTIONS */
 
+    main {
+      background: #ffffff;
+    }
+
     .section {
-      padding: 1rem 0 2.5rem;
+      padding: 2.5rem 0 2.5rem;
     }
 
     .section-header {
@@ -332,7 +407,7 @@
     }
 
     .section-title {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--swift-dark);
       margin-bottom: 0.3rem;
@@ -344,10 +419,13 @@
       max-width: 32rem;
     }
 
+    /* SERVICES */
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
+      margin-top: 1rem;
     }
 
     .card {
@@ -405,28 +483,177 @@
       margin-top: 0.15rem;
     }
 
+    /* HOW IT WORKS + PRICES */
+
     .info-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
       gap: 1.4rem;
-      align-items: start;
+      align-items: flex-start;
+      margin-top: 1.2rem;
     }
 
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: 0.4rem;
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
     }
 
-    .pill {
-      font-size: 0.76rem;
-      padding: 0.15rem 0.7rem;
-      border-radius: 999px;
+    .step {
+      border-radius: 16px;
       border: 1px solid #e5e7eb;
       background: #f9fafb;
-      color: #4b5563;
+      padding: 0.8rem;
+      font-size: 0.82rem;
     }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--swift-blue);
+      color: white;
+      font-size: 0.72rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.35rem;
+    }
+
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #0f172a;
+    }
+
+    .price-card {
+      border-radius: 18px;
+      border: 1px solid #e5e7eb;
+      background: #f8fafc;
+      padding: 1rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      font-size: 0.86rem;
+    }
+
+    .price-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.5rem 0 0.8rem;
+    }
+
+    .price-chip {
+      font-size: 0.76rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px dashed #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 0.35rem 0.25rem;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+
+    .price-table th {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .price-note {
+      margin-top: 0.5rem;
+      font-size: 0.76rem;
+      color: #6b7280;
+    }
+
+    /* FAQ */
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 1.4rem;
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      padding: 0.8rem 0.9rem;
+      background: #ffffff;
+      font-size: 0.86rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #0f172a;
+    }
+
+    /* CONTACT */
+
+    .contact-card {
+      border-radius: 18px;
+      border: 1px solid #e5e7eb;
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 1.4rem 1.2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.3rem;
+      align-items: center;
+    }
+
+    .contact-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: #f9fafb;
+    }
+
+    .contact-text {
+      font-size: 0.9rem;
+      color: #cbd5f5;
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-details {
+      font-size: 0.82rem;
+      display: grid;
+      gap: 0.25rem;
+      margin-top: 0.5rem;
+      color: #e5e7eb;
+    }
+
+    .contact-details span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .contact-details span::before {
+      content: "•";
+      color: var(--swift-yellow);
+    }
+
+    .contact-right-note {
+      font-size: 0.8rem;
+      color: #cbd5f5;
+      margin-bottom: 0.7rem;
+    }
+
+    /* FOOTER */
 
     footer {
       border-top: 1px solid #e5e7eb;
@@ -453,8 +680,8 @@
 
     .chatbot-toggle {
       position: fixed;
-      right: 1.2rem;
-      bottom: 1.2rem;
+      right: 1.1rem;
+      bottom: 1.1rem;
       z-index: 50;
       width: 54px;
       height: 54px;
@@ -483,7 +710,7 @@
 
     .chatbot-panel {
       position: fixed;
-      right: 1.2rem;
+      right: 1.1rem;
       bottom: 5.1rem;
       width: 320px;
       max-width: calc(100% - 2.4rem);
@@ -537,7 +764,7 @@
 
     .chatbot-sub {
       font-size: 0.7rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     .chatbot-close {
@@ -556,6 +783,7 @@
       max-height: 280px;
       overflow-y: auto;
       font-size: 0.78rem;
+      background: #f8fafc;
     }
 
     .chat-msg {
@@ -630,17 +858,32 @@
     }
 
     /* ANIMATION */
+
     @keyframes slow-fade {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* RESPONSIVE */
 
+    @media (max-width: 980px) {
+      nav {
+        display: none;
+      }
+    }
+
     @media (max-width: 820px) {
       .hero-grid,
       .info-grid,
-      .cards {
+      .cards,
+      .contact-card,
+      .faq-grid {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -654,11 +897,6 @@
 
       .header-inner {
         align-items: flex-start;
-      }
-
-      .lang-chat {
-        flex-direction: column-reverse;
-        align-items: flex-end;
       }
     }
 
@@ -677,6 +915,10 @@
       .chatbot-toggle {
         right: 0.8rem;
         bottom: 0.9rem;
+      }
+
+      .contact-card {
+        padding: 1.1rem 1rem;
       }
     }
   </style>
@@ -698,8 +940,22 @@
           </div>
         </div>
 
-        <div class="lang-chat">
-          <a class="btn-whatsapp" href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#how">How it works</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-cta">
+          <div class="small-pill">WhatsApp only • Flexible hours</div>
+          <a
+            class="btn-whatsapp"
+            href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20a%20cleaning%20quote."
+            target="_blank"
+            rel="noopener"
+          >
             <span class="icon">💬</span>
             <span>Chat on WhatsApp</span>
           </a>
@@ -709,7 +965,7 @@
   </header>
 
   <!-- HERO -->
-  <main>
+  <main id="home">
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
@@ -720,11 +976,14 @@
             </div>
 
             <h1 class="hero-title">
-              Professional <span class="highlight">Cleaning Services</span> in Jersey
+              Professional <span class="highlight">Cleaning Services</span> in
+              Jersey
             </h1>
 
             <p class="hero-sub">
-              Regular and one-off cleaning for houses, offices and building staircases. Focus on kitchens, bathrooms and ovens, always fitted around your schedule.
+              Regular and one-off cleaning for houses, flats, offices and
+              building staircases. Focus on kitchens, bathrooms and ovens –
+              always fitted around your schedule.
             </p>
 
             <div class="hero-badges">
@@ -743,27 +1002,42 @@
             </div>
 
             <div class="hero-actions">
-              <a href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">
-                <button class="btn-primary" type="button">Request a free quote</button>
+              <a
+                href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20a%20cleaning%20quote."
+                target="_blank"
+                rel="noopener"
+              >
+                <button class="btn-primary" type="button">
+                  Request a free quote on WhatsApp
+                </button>
               </a>
 
-              <span class="hero-note">
-                Share a few details on WhatsApp and get a quick response.
-              </span>
+              <a href="#services">
+                <button class="btn-secondary" type="button">
+                  View services ↓
+                </button>
+              </a>
             </div>
 
             <p class="hero-note">
-              All equipment and products can be provided on request.
+              Share a few details about your property on WhatsApp and receive a
+              personalised quote. All equipment and products can be provided on
+              request.
             </p>
           </div>
 
           <aside class="hero-card">
             <div class="hero-photo">
-              <!-- Podes subir uma foto de equipa 'swift-team.jpg' ou usar outra imagem -->
-              <img src="swift-team.jpg" alt="Swift Cleaning team at work" class="hero-photo-img" />
+              <!-- Podes subir uma foto de equipa 'swift-team.jpg' ou outra imagem de limpeza -->
+              <img
+                src="swift-team.jpg"
+                alt="Swift Cleaning team at work in Jersey"
+                class="hero-photo-img"
+              />
             </div>
             <p class="hero-tagline">
-              Swift Cleaning keeps your house, office or building staircase clean so you can focus on your day.
+              Swift Cleaning keeps your home, office or building staircase
+              spotless so you can focus on your day.
             </p>
             <div class="hero-meta">
               <span>Homes, offices and buildings across Jersey</span>
@@ -775,13 +1049,17 @@
     </section>
 
     <!-- SERVICES -->
-    <section class="section">
+    <section class="section" id="services">
       <div class="container">
         <div class="section-header">
           <div class="section-kicker">Services</div>
-          <h2 class="section-title">What Swift Cleaning can help you with</h2>
+          <h2 class="section-title">
+            What Swift Cleaning can help you with
+          </h2>
           <p class="section-sub">
-            Simple, flexible cleaning for busy families and businesses in Jersey – focused on houses, offices and building staircases.
+            Simple, flexible cleaning for busy families and businesses in
+            Jersey – focused on houses, offices and building staircases. One-off
+            or regular visits, depending on what you need.
           </p>
         </div>
 
@@ -791,12 +1069,13 @@
             <div class="card-icon">🏠</div>
             <h3 class="card-title">House & apartment cleaning</h3>
             <p class="card-text">
-              Regular or one-off cleaning to keep your home fresh – including kitchens, bathrooms and oven cleaning.
+              Regular or one-off cleaning to keep your home fresh – with
+              attention to kitchens, bathrooms and high-touch areas.
             </p>
             <ul class="list">
               <li>Bedrooms, living areas and hallways</li>
-              <li>Kitchens and bathrooms cleaned thoroughly</li>
-              <li>Oven and hob cleaning available</li>
+              <li>Thorough kitchen and bathroom cleaning</li>
+              <li>Dusting, hoovering, mopping and surfaces</li>
             </ul>
             <span class="card-tag">Perfect for busy homes</span>
           </article>
@@ -806,14 +1085,15 @@
             <div class="card-icon">🧹</div>
             <h3 class="card-title">Office & workplace cleaning</h3>
             <p class="card-text">
-              Cleaning for small offices and workplaces to keep desks, kitchens and toilets ready for staff and clients.
+              Cleaning for small offices and workplaces so desks, kitchens and
+              toilets are ready for staff and visitors.
             </p>
             <ul class="list">
-              <li>Desks, bins and common areas</li>
+              <li>Desks, bins and communal areas</li>
               <li>Office kitchens and toilets</li>
-              <li>Early morning or evening options</li>
+              <li>Morning or evening visits to suit your hours</li>
             </ul>
-            <span class="card-tag">Flexible for your hours</span>
+            <span class="card-tag">Flexible to your schedule</span>
           </article>
 
           <!-- Staircases & buildings -->
@@ -821,62 +1101,321 @@
             <div class="card-icon">🏢</div>
             <h3 class="card-title">Staircases & communal areas</h3>
             <p class="card-text">
-              Cleaning for stairwells and shared areas in buildings and condominiums, keeping entrances looking looked-after.
+              Cleaning for stairwells and shared areas in buildings and
+              blocks – keeping entrances tidy and cared for.
             </p>
             <ul class="list">
               <li>Staircases, handrails and landings</li>
-              <li>Entrance doors and hallways</li>
-              <li>Scheduled weekly or monthly</li>
+              <li>Entrance doors, lobbies and corridors</li>
+              <li>Weekly, fortnightly or monthly schedules</li>
             </ul>
             <span class="card-tag">Ideal for buildings & blocks</span>
+          </article>
+        </div>
+
+        <div class="cards" style="margin-top:1rem;">
+          <!-- Add-ons -->
+          <article class="card">
+            <div class="card-icon">🔥</div>
+            <h3 class="card-title">Deep kitchen & oven cleaning</h3>
+            <p class="card-text">
+              Extra focus on ovens, hobs, cupboards and tiles as part of a deep
+              clean or regular visit.
+            </p>
+            <ul class="list">
+              <li>Oven, hob and extractor front cleaning</li>
+              <li>Worktops, cupboard doors and splashbacks</li>
+              <li>Great add-on for moving in or out</li>
+            </ul>
+            <span class="card-tag">Book as an add-on</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧼</div>
+            <h3 class="card-title">Deep & one-off cleaning</h3>
+            <p class="card-text">
+              A more detailed clean for when a standard visit isn’t enough –
+              after building work, before guests or moving.
+            </p>
+            <ul class="list">
+              <li>Extra time spent on bathrooms & kitchens</li>
+              <li>Skirting boards, doors and switches</li>
+              <li>Tailored checklist to your property</li>
+            </ul>
+            <span class="card-tag">For a full refresh</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">✨</div>
+            <h3 class="card-title">Custom cleaning plans</h3>
+            <p class="card-text">
+              Every home and office is different. Swift Cleaning can follow
+              your own checklist and priorities.
+            </p>
+            <ul class="list">
+              <li>Weekly, fortnightly or monthly routines</li>
+              <li>Focus on the rooms that matter most</li>
+              <li>Clear communication before each visit</li>
+            </ul>
+            <span class="card-tag">Made around your needs</span>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- WHY SWIFT / HOW TO BOOK -->
-    <section class="section">
+    <!-- WHY + HOW / PRICES -->
+    <section class="section" id="how">
       <div class="container">
         <div class="info-grid">
           <div>
             <div class="section-header">
               <div class="section-kicker">Why Swift Cleaning</div>
-              <h2 class="section-title">Local, insured and detail-focused</h2>
+              <h2 class="section-title">
+                Local, insured and detail-focused
+              </h2>
             </div>
             <p class="section-sub">
-              Swift Cleaning is a local Jersey service that understands what homes, offices and buildings need to feel truly clean. Every visit follows a clear checklist so important details aren’t missed.
+              Swift Cleaning is a local Jersey service that understands what
+              homes, offices and buildings need to feel truly clean. Each visit
+              is planned around your priorities, with a clear checklist so
+              important details aren’t missed.
             </p>
 
-            <div class="pill-row">
-              <span class="pill">Local Jersey cleaners</span>
-              <span class="pill">Insured for your peace of mind</span>
-              <span class="pill">Flexible mornings, evenings & weekends</span>
-              <span class="pill">We can bring all products</span>
+            <div class="steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-title">Local cleaners</div>
+                <p>
+                  Based in Jersey, familiar with different areas, building
+                  types and access arrangements.
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-title">Insured & reliable</div>
+                <p>
+                  Fully insured service for peace of mind, with clear
+                  communication before each job.
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-title">Flexible timings</div>
+                <p>
+                  Mornings, evenings and some weekends available – agreed in
+                  advance via WhatsApp.
+                </p>
+              </div>
             </div>
           </div>
 
           <aside>
             <div class="section-header">
-              <div class="section-kicker">How to book</div>
-              <h2 class="section-title">Share a few details on WhatsApp</h2>
-            </div>
-            <p class="section-sub">
-              Send a quick message on WhatsApp with your area in Jersey, if it’s for a house, office or building staircase, and your preferred days. You’ll receive a personalised quote and available times.
-            </p>
-
-            <div class="pill-row">
-              <span class="pill">Homes across Jersey</span>
-              <span class="pill">Flats & houses</span>
-              <span class="pill">Offices & small businesses</span>
-              <span class="pill">Buildings & staircases</span>
+              <div class="section-kicker">How it works</div>
+              <h2 class="section-title">Three simple steps</h2>
             </div>
 
-            <div style="margin-top:1rem;">
-              <a href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20to%20ask%20about%20cleaning%20availability." target="_blank" rel="noopener">
-                <button class="btn-primary" type="button" style="width:100%;">Open WhatsApp and send a message</button>
-              </a>
+            <div class="price-card">
+              <p>
+                Booking with Swift Cleaning is straightforward – everything is
+                done through WhatsApp so you can send photos, questions and
+                preferred times easily.
+              </p>
+
+              <div class="price-chip-row">
+                <span class="price-chip">Step 1 – Send a message</span>
+                <span class="price-chip">Step 2 – Get your quote</span>
+                <span class="price-chip">Step 3 – Enjoy a clean space</span>
+              </div>
+
+              <table class="price-table" aria-label="Example cleaning quotes">
+                <thead>
+                  <tr>
+                    <th>Typical job</th>
+                    <th>Frequency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2–3 bedroom house clean</td>
+                    <td>Weekly or fortnightly</td>
+                  </tr>
+                  <tr>
+                    <td>Flat or apartment clean</td>
+                    <td>Weekly / one-off</td>
+                  </tr>
+                  <tr>
+                    <td>Small office clean</td>
+                    <td>Daily, weekly or evenings</td>
+                  </tr>
+                  <tr>
+                    <td>Building staircase & lobby</td>
+                    <td>Weekly or monthly</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p class="price-note">
+                Prices depend on property size, condition and how often you’d
+                like cleaning. You’ll always receive a clear quote in writing on
+                WhatsApp before any work is booked.
+              </p>
+
+              <div style="margin-top:0.7rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <a
+                  href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20to%20ask%20about%20cleaning%20availability."
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <button class="btn-primary" type="button">
+                    Open WhatsApp & send details
+                  </button>
+                </a>
+              </div>
             </div>
           </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Questions</div>
+          <h2 class="section-title">Frequently asked questions</h2>
+          <p class="section-sub">
+            A few common questions people in Jersey ask before they book
+            cleaning with Swift Cleaning.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div>
+            <div class="faq-item">
+              <div class="faq-q">Do you bring your own products?</div>
+              <p>
+                Yes – Swift Cleaning can bring all the cleaning products and
+                basic equipment needed. If you prefer your own products
+                (sensitive skin, specific brands, eco-friendly), this can be
+                agreed easily by message.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Which areas of Jersey do you cover?</div>
+              <p>
+                Swift Cleaning works across the island – including St Helier,
+                St Clement, St Saviour, St Brelade and surrounding parishes.
+                When you send a WhatsApp message, please mention your road or
+                area so travel time can be included in the quote.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                Can I book regular weekly or fortnightly cleaning?
+              </div>
+              <p>
+                Yes – many clients choose a weekly or fortnightly visit, while
+                others prefer one-off deep cleans. The schedule is set up in
+                advance on WhatsApp and can be adjusted if your situation
+                changes.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div class="faq-item">
+              <div class="faq-q">Are you insured?</div>
+              <p>
+                Swift Cleaning works with appropriate insurance for domestic and
+                light commercial cleaning. Full details can be shared on
+                request, so you always know who is coming into your property.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                Do I need to be at home or at the office during the clean?
+              </div>
+              <p>
+                Not necessarily. Some clients prefer to be at home, others
+                choose to provide access via key or concierge. Access is always
+                agreed in advance, and communication is kept clear before and
+                after every visit.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                How do I get started if I’m not sure what I need?
+              </div>
+              <p>
+                Just send a short WhatsApp message describing your property
+                (house, flat, office or building staircase), how many rooms
+                there are and how often you think you’d like cleaning. If
+                helpful, you can send photos and Swift Cleaning will suggest a
+                plan and quote.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">
+            Ready to make your space feel freshly cleaned?
+          </h2>
+          <p class="section-sub">
+            The quickest way to get a quote is by sending a WhatsApp message
+            with a few details. You can also save the number to your phone for
+            future bookings.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div>
+            <div class="contact-title">Swift Cleaning • Jersey</div>
+            <p class="contact-text">
+              Professional cleaning for houses, flats, offices and building
+              staircases across Jersey – with friendly communication and clear
+              pricing.
+            </p>
+            <div class="contact-details">
+              <span>WhatsApp: +44 7700 335389</span>
+              <span>Location: Jersey, Channel Islands</span>
+              <span>Bookings: WhatsApp message only</span>
+            </div>
+          </div>
+
+          <div>
+            <p class="contact-right-note">
+              Click below to open a WhatsApp chat. You can copy and send the
+              suggested message, then add your own details.
+            </p>
+            <a
+              href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20to%20ask%20about%20cleaning%20for%20my%20home%20%2F%20office%20in%20Jersey.%20My%20area%20is%20...%20and%20I%27m%20looking%20for%20cleaning%20on%20these%20days%3A%20..."
+              target="_blank"
+              rel="noopener"
+            >
+              <button class="btn-whatsapp" type="button" style="margin-bottom:0.6rem;">
+                <span class="icon">💬</span>
+                <span>Open WhatsApp & start chat</span>
+              </button>
+            </a>
+            <p class="contact-right-note">
+              Typical information that helps with a quote:
+              property type (house, flat, office or staircase), number of
+              bedrooms/offices, area of Jersey and how often you’d like
+              cleaning.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -890,14 +1429,18 @@
           <strong>Swift Cleaning Services in Jersey</strong>
           <span> – cleaning for homes, offices and building staircases across Jersey.</span>
         </div>
-        <div>Bookings and quotes via WhatsApp.</div>
+        <div>Bookings and quotes via WhatsApp: +44 7700 335389</div>
       </div>
     </div>
   </footer>
 </div>
 
 <!-- CHATBOT -->
-<button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chat assistant">
+<button
+  class="chatbot-toggle"
+  id="chatbotToggle"
+  aria-label="Open Swift Cleaning assistant"
+>
   💬
   <span class="chatbot-badge"></span>
 </button>
@@ -908,62 +1451,92 @@
       <div class="chatbot-avatar">S</div>
       <div>
         <div class="chatbot-title">Swift Cleaning assistant</div>
-        <div class="chatbot-sub">Ask a quick question or request a quote.</div>
+        <div class="chatbot-sub">
+          Ask a quick question or tap a shortcut below.
+        </div>
       </div>
     </div>
-    <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">×</button>
+    <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">
+      ×
+    </button>
   </div>
 
   <div class="chatbot-body" id="chatbotBody">
     <div class="chat-msg bot">
-      <div class="bubble">Hi! 👋 How can we help you today?</div>
+      <div class="bubble">
+        Hi! 👋 How can Swift Cleaning help you today?
+      </div>
     </div>
     <div class="chat-msg bot">
-      <div class="bubble">Choose one of the options below or open WhatsApp for a personalised quote.</div>
+      <div class="bubble">
+        Choose one of the options below or open WhatsApp for a personalised quote.
+      </div>
     </div>
 
     <div class="chat-quick" id="chatQuick">
-      <button class="chat-chip" data-question="I’d like a quote for cleaning my house or apartment.">
-        <span>Quote for my house</span>
+      <button
+        class="chat-chip"
+        data-question="I'd like a quote for cleaning my house or apartment in Jersey."
+      >
+        <span>Quote for my home</span>
       </button>
-      <button class="chat-chip" data-question="Do you offer regular weekly or fortnightly cleaning for homes or offices?">
+      <button
+        class="chat-chip"
+        data-question="Do you offer regular weekly or fortnightly cleaning for homes or offices?"
+      >
         <span>Regular cleaning</span>
       </button>
-      <button class="chat-chip" data-question="I need the staircases and communal areas of a building cleaned.">
+      <button
+        class="chat-chip"
+        data-question="I need the staircases and communal areas of a building cleaned."
+      >
         <span>Building staircases</span>
+      </button>
+      <button
+        class="chat-chip"
+        data-question="Can you bring all cleaning products and equipment?"
+      >
+        <span>Products & equipment</span>
       </button>
     </div>
   </div>
 
   <div class="chat-footer">
-    <div class="chat-note">For detailed quotes we’ll reply directly on WhatsApp.</div>
-    <button class="btn-whatsapp-small" id="chatWhatsApp" type="button">Open WhatsApp</button>
+    <div class="chat-note">
+      For detailed quotes we’ll reply directly on WhatsApp.
+    </div>
+    <button class="btn-whatsapp-small" id="chatWhatsApp" type="button">
+      Open WhatsApp
+    </button>
   </div>
 </div>
 
 <script>
   // CHATBOT
-  const chatbotToggle = document.getElementById('chatbotToggle');
-  const chatbotPanel = document.getElementById('chatbotPanel');
-  const chatbotClose = document.getElementById('chatbotClose');
-  const chatBody = document.getElementById('chatbotBody');
-  const chatQuick = document.getElementById('chatQuick');
-  const chatWhatsApp = document.getElementById('chatWhatsApp');
+  const chatbotToggle = document.getElementById("chatbotToggle");
+  const chatbotPanel = document.getElementById("chatbotPanel");
+  const chatbotClose = document.getElementById("chatbotClose");
+  const chatBody = document.getElementById("chatbotBody");
+  const chatQuick = document.getElementById("chatQuick");
+  const chatWhatsApp = document.getElementById("chatWhatsApp");
 
   function toggleChatbot(open) {
-    const shouldOpen = open !== undefined ? open : !chatbotPanel.classList.contains('open');
-    chatbotPanel.classList.toggle('open', shouldOpen);
+    const shouldOpen =
+      open !== undefined
+        ? open
+        : !chatbotPanel.classList.contains("open");
+    chatbotPanel.classList.toggle("open", shouldOpen);
   }
 
-  chatbotToggle.addEventListener('click', () => toggleChatbot());
-  chatbotClose.addEventListener('click', () => toggleChatbot(false));
+  chatbotToggle.addEventListener("click", () => toggleChatbot());
+  chatbotClose.addEventListener("click", () => toggleChatbot(false));
 
   function addMessage(text, from) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'chat-msg ' + (from === 'user' ? 'user' : 'bot');
+    const wrapper = document.createElement("div");
+    wrapper.className = "chat-msg " + (from === "user" ? "user" : "bot");
 
-    const bubble = document.createElement('div');
-    bubble.className = 'bubble';
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
     bubble.textContent = text;
 
     wrapper.appendChild(bubble);
@@ -971,23 +1544,24 @@
     chatBody.scrollTop = chatBody.scrollHeight;
   }
 
-  chatQuick.addEventListener('click', (e) => {
-    const chip = e.target.closest('.chat-chip');
+  chatQuick.addEventListener("click", (e) => {
+    const chip = e.target.closest(".chat-chip");
     if (!chip) return;
 
-    const question = chip.getAttribute('data-question');
+    const question = chip.getAttribute("data-question");
     if (!question) return;
 
-    addMessage(question, 'user');
+    addMessage(question, "user");
 
-    const reply = "Thanks! 👌 Please tap the WhatsApp button below and send us your address in Jersey, say if it’s for a house, office or building staircase, and your preferred dates. We’ll reply with a quote.";
+    const reply =
+      "Thanks! 👌 Please tap the WhatsApp button below and send us your address in Jersey, say if it’s for a house, flat, office or building staircase, and your preferred days. We’ll reply with a personalised quote.";
 
-    addMessage(reply, 'bot');
+    addMessage(reply, "bot");
   });
 
   const whatsappUrl = "https://wa.me/447700335389";
 
-  chatWhatsApp.addEventListener('click', () => {
+  chatWhatsApp.addEventListener("click", () => {
     window.open(whatsappUrl, "_blank");
   });
 </script>
