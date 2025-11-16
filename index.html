@@ -123,32 +123,6 @@
       gap: 0.75rem;
     }
 
-    .lang-toggle {
-      display: inline-flex;
-      background: #e5edf8;
-      border-radius: 999px;
-      padding: 4px;
-      gap: 3px;
-    }
-
-    .lang-btn {
-      border: none;
-      background: transparent;
-      font-size: 0.78rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      cursor: pointer;
-      color: #475569;
-      font-weight: 600;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .lang-btn.active {
-      background: white;
-      color: var(--swift-blue);
-      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.14);
-    }
-
     .btn-whatsapp {
       border-radius: 999px;
       padding: 0.55rem 1.1rem;
@@ -220,7 +194,7 @@
       color: var(--swift-dark);
     }
 
-    .hero-title span.highlight {
+    .hero-title .highlight {
       color: var(--swift-blue);
     }
 
@@ -339,7 +313,7 @@
       color: var(--swift-blue);
     }
 
-    /* SEÇÕES */
+    /* SECTIONS */
 
     .section {
       padding: 1rem 0 2.5rem;
@@ -655,7 +629,7 @@
       white-space: nowrap;
     }
 
-    /* ANIMAÇÃO FOTO */
+    /* ANIMATION */
     @keyframes slow-fade {
       from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -715,24 +689,19 @@
       <div class="header-inner">
         <div class="brand">
           <div class="logo-circle">
-            <!-- Coloca aqui o ficheiro do logo como 'swift-logo.png' no GitHub -->
-            <img src="swift-logo.png" alt="Swift Cleaning Service logo" />
+            <!-- Garante que tens um ficheiro chamado 'swift-logo.png' no GitHub -->
+            <img src="swift-logo.png" alt="Swift Cleaning logo" />
           </div>
           <div class="brand-text">
             <div class="brand-title">Swift Cleaning</div>
-            <div class="brand-sub" data-en="Jersey • Professional Cleaning" data-pt="Jersey • Limpeza Profissional"></div>
+            <div class="brand-sub">JERSEY • PROFESSIONAL CLEANING</div>
           </div>
         </div>
 
         <div class="lang-chat">
-          <div class="lang-toggle">
-            <button class="lang-btn active" data-lang-btn="en">EN</button>
-            <button class="lang-btn" data-lang-btn="pt">PT</button>
-          </div>
-
           <a class="btn-whatsapp" href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">
             <span class="icon">💬</span>
-            <span data-en="Chat on WhatsApp" data-pt="Falar no WhatsApp"></span>
+            <span>Chat on WhatsApp</span>
           </a>
         </div>
       </div>
@@ -747,52 +716,58 @@
           <div>
             <div class="eyebrow">
               <span class="eyebrow-dot"></span>
-              <span data-en="Local cleaning for homes, offices and buildings" data-pt="Limpeza local para casas, escritórios e prédios"></span>
+              <span>Local cleaning for homes, offices and buildings</span>
             </div>
 
             <h1 class="hero-title">
-              <span data-en="Professional" data-pt="Serviços profissionais de"></span>
-              <span class="highlight" data-en="Cleaning Services" data-pt="limpeza"></span>
-              <span data-en="in Jersey" data-pt="em Jersey"></span>
+              Professional <span class="highlight">Cleaning Services</span> in Jersey
             </h1>
 
-            <p class="hero-sub" data-en="Regular and one-off cleaning for houses, offices and building staircases. Focus on kitchens, bathrooms and ovens, always fitted around your schedule." data-pt="Limpezas regulares e pontuais para casas, escritórios e escadas de prédios. Foco em cozinhas, casas de banho e fogões/fornos, sempre ajustado ao seu horário."></p>
+            <p class="hero-sub">
+              Regular and one-off cleaning for houses, offices and building staircases. Focus on kitchens, bathrooms and ovens, always fitted around your schedule.
+            </p>
 
             <div class="hero-badges">
               <div class="hero-badge">
                 <span class="dot"></span>
-                <span data-en="Houses & apartments" data-pt="Casas e apartamentos"></span>
+                <span>Houses & apartments</span>
               </div>
               <div class="hero-badge">
                 <span class="dot"></span>
-                <span data-en="Offices & small businesses" data-pt="Escritórios e pequenos negócios"></span>
+                <span>Offices & small businesses</span>
               </div>
               <div class="hero-badge">
                 <span class="dot"></span>
-                <span data-en="Building staircases & communal areas" data-pt="Escadas e áreas comuns de prédios"></span>
+                <span>Building staircases & communal areas</span>
               </div>
             </div>
 
             <div class="hero-actions">
               <a href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">
-                <button class="btn-primary" type="button" data-en="Request a free quote" data-pt="Pedir orçamento grátis"></button>
+                <button class="btn-primary" type="button">Request a free quote</button>
               </a>
 
-              <span class="hero-note" data-en="Share a few details on WhatsApp and get a quick response." data-pt="Envie alguns detalhes pelo WhatsApp e receba resposta rápida."></span>
+              <span class="hero-note">
+                Share a few details on WhatsApp and get a quick response.
+              </span>
             </div>
 
-            <p class="hero-note" data-en="All equipment and products can be provided on request." data-pt="Podemos fornecer todo o equipamento e produtos de limpeza, se necessário."></p>
+            <p class="hero-note">
+              All equipment and products can be provided on request.
+            </p>
           </div>
 
           <aside class="hero-card">
             <div class="hero-photo">
-              <!-- Sobe uma imagem 'swift-team.jpg' para o GitHub -->
+              <!-- Podes subir uma foto de equipa 'swift-team.jpg' ou usar outra imagem -->
               <img src="swift-team.jpg" alt="Swift Cleaning team at work" class="hero-photo-img" />
             </div>
-            <p class="hero-tagline" data-en="Swift Cleaning keeps your house, office or building staircase clean so you can focus on your day." data-pt="A Swift Cleaning mantém a sua casa, escritório ou escadas do prédio limpas para que se possa focar no seu dia."></p>
+            <p class="hero-tagline">
+              Swift Cleaning keeps your house, office or building staircase clean so you can focus on your day.
+            </p>
             <div class="hero-meta">
-              <span data-en="Homes, offices and buildings across Jersey" data-pt="Casas, escritórios e prédios em toda a ilha de Jersey"></span>
-              <span data-en="Flexible times – mornings, evenings & weekends" data-pt="Horários flexíveis – manhã, tarde, noite e fins-de-semana"></span>
+              <span>Homes, offices and buildings across Jersey</span>
+              <span>Flexible times – mornings, evenings & weekends</span>
             </div>
           </aside>
         </div>
@@ -803,49 +778,57 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <div class="section-kicker" data-en="Services" data-pt="Serviços"></div>
-          <h2 class="section-title" data-en="What Swift Cleaning can help you with" data-pt="Em que a Swift Cleaning a pode ajudar"></h2>
-          <p class="section-sub" data-en="Simple, flexible cleaning for busy families and businesses in Jersey – focused on houses, offices and building staircases." data-pt="Serviços de limpeza simples e flexíveis para famílias e negócios em Jersey – focados em casas, escritórios e escadas de prédios."></p>
+          <div class="section-kicker">Services</div>
+          <h2 class="section-title">What Swift Cleaning can help you with</h2>
+          <p class="section-sub">
+            Simple, flexible cleaning for busy families and businesses in Jersey – focused on houses, offices and building staircases.
+          </p>
         </div>
 
         <div class="cards">
           <!-- Home cleaning -->
           <article class="card">
             <div class="card-icon">🏠</div>
-            <h3 class="card-title" data-en="House & apartment cleaning" data-pt="Limpezas de casas e apartamentos"></h3>
-            <p class="card-text" data-en="Regular or one-off cleaning to keep your home fresh – including kitchens, bathrooms and oven cleaning." data-pt="Limpezas regulares ou pontuais para manter a sua casa sempre fresca – incluindo cozinhas, casas de banho e limpeza de fogão/forno."></p>
+            <h3 class="card-title">House & apartment cleaning</h3>
+            <p class="card-text">
+              Regular or one-off cleaning to keep your home fresh – including kitchens, bathrooms and oven cleaning.
+            </p>
             <ul class="list">
-              <li data-en="Bedrooms, living areas and hallways" data-pt="Quartos, salas e corredores"></li>
-              <li data-en="Kitchens and bathrooms cleaned thoroughly" data-pt="Cozinhas e casas de banho bem limpas"></li>
-              <li data-en="Oven and hob cleaning available" data-pt="Limpeza de fogão/forno disponível"></li>
+              <li>Bedrooms, living areas and hallways</li>
+              <li>Kitchens and bathrooms cleaned thoroughly</li>
+              <li>Oven and hob cleaning available</li>
             </ul>
-            <span class="card-tag" data-en="Perfect for busy homes" data-pt="Perfeito para casas ocupadas"></span>
+            <span class="card-tag">Perfect for busy homes</span>
           </article>
 
           <!-- Office cleaning -->
           <article class="card">
             <div class="card-icon">🧹</div>
-            <h3 class="card-title" data-en="Office & workplace cleaning" data-pt="Limpezas de escritórios"></h3>
-            <p class="card-text" data-en="Cleaning for small offices and workplaces to keep desks, kitchens and toilets ready for staff and clients." data-pt="Limpeza para escritórios e locais de trabalho – mesas, cozinhas e casas de banho sempre prontas para equipa e clientes."></p>
+            <h3 class="card-title">Office & workplace cleaning</h3>
+            <p class="card-text">
+              Cleaning for small offices and workplaces to keep desks, kitchens and toilets ready for staff and clients.
+            </p>
             <ul class="list">
-              <li data-en="Desks, bins and common areas" data-pt="Secretárias, caixotes e áreas comuns"></li>
-              <li data-en="Office kitchens and toilets" data-pt="Cozinhas e casas de banho de escritório"></li>
-              <li data-en="Early morning or evening options" data-pt="Opções de manhã cedo ou ao fim do dia"></li>
+              <li>Desks, bins and common areas</li>
+              <li>Office kitchens and toilets</li>
+              <li>Early morning or evening options</li>
             </ul>
-            <span class="card-tag" data-en="Flexible for your hours" data-pt="Flexível aos seus horários"></span>
+            <span class="card-tag">Flexible for your hours</span>
           </article>
 
           <!-- Staircases & buildings -->
           <article class="card">
             <div class="card-icon">🏢</div>
-            <h3 class="card-title" data-en="Staircases & communal areas" data-pt="Escadas e áreas comuns de prédios"></h3>
-            <p class="card-text" data-en="Cleaning for stairwells and shared areas in buildings and condominiums, keeping entrances looking looked-after." data-pt="Limpeza de escadas e zonas comuns em prédios e condomínios, para que a entrada esteja sempre cuidada."></p>
+            <h3 class="card-title">Staircases & communal areas</h3>
+            <p class="card-text">
+              Cleaning for stairwells and shared areas in buildings and condominiums, keeping entrances looking looked-after.
+            </p>
             <ul class="list">
-              <li data-en="Staircases, handrails and landings" data-pt="Escadas, corrimões e patamares"></li>
-              <li data-en="Entrance doors and hallways" data-pt="Portas de entrada e halls"></li>
-              <li data-en="Scheduled weekly or monthly" data-pt="Agendado semanal ou mensalmente"></li>
+              <li>Staircases, handrails and landings</li>
+              <li>Entrance doors and hallways</li>
+              <li>Scheduled weekly or monthly</li>
             </ul>
-            <span class="card-tag" data-en="Ideal for buildings & blocks" data-pt="Ideal para prédios e blocos"></span>
+            <span class="card-tag">Ideal for buildings & blocks</span>
           </article>
         </div>
       </div>
@@ -857,36 +840,40 @@
         <div class="info-grid">
           <div>
             <div class="section-header">
-              <div class="section-kicker" data-en="Why Swift Cleaning" data-pt="Porquê a Swift Cleaning"></div>
-              <h2 class="section-title" data-en="Local, insured and detail-focused" data-pt="Equipa local, segurada e atenta ao detalhe"></h2>
+              <div class="section-kicker">Why Swift Cleaning</div>
+              <h2 class="section-title">Local, insured and detail-focused</h2>
             </div>
-            <p class="section-sub" data-en="Swift Cleaning is a local Jersey service that understands what homes, offices and buildings need to feel truly clean. Every visit follows a clear checklist so important details aren’t missed." data-pt="A Swift Cleaning é um serviço local de Jersey que conhece o que casas, escritórios e prédios precisam para ficarem verdadeiramente limpos. Cada visita segue uma checklist clara para que os detalhes importantes não sejam esquecidos."></p>
+            <p class="section-sub">
+              Swift Cleaning is a local Jersey service that understands what homes, offices and buildings need to feel truly clean. Every visit follows a clear checklist so important details aren’t missed.
+            </p>
 
             <div class="pill-row">
-              <span class="pill" data-en="Local Jersey cleaners" data-pt="Equipa local de Jersey"></span>
-              <span class="pill" data-en="Insured for your peace of mind" data-pt="Serviço segurado para sua tranquilidade"></span>
-              <span class="pill" data-en="Flexible mornings, evenings & weekends" data-pt="Horários flexíveis – manhã, tarde e fins-de-semana"></span>
-              <span class="pill" data-en="We can bring all products" data-pt="Podemos trazer todos os produtos"></span>
+              <span class="pill">Local Jersey cleaners</span>
+              <span class="pill">Insured for your peace of mind</span>
+              <span class="pill">Flexible mornings, evenings & weekends</span>
+              <span class="pill">We can bring all products</span>
             </div>
           </div>
 
           <aside>
             <div class="section-header">
-              <div class="section-kicker" data-en="How to book" data-pt="Como reservar"></div>
-              <h2 class="section-title" data-en="Share a few details on WhatsApp" data-pt="Envie alguns detalhes pelo WhatsApp"></h2>
+              <div class="section-kicker">How to book</div>
+              <h2 class="section-title">Share a few details on WhatsApp</h2>
             </div>
-            <p class="section-sub" data-en="Send a quick message on WhatsApp with your area in Jersey, if it’s for a house, office or building staircase, and your preferred days. You’ll receive a personalised quote and available times." data-pt="Envie uma mensagem rápida pelo WhatsApp com a sua zona em Jersey, se é para casa, escritório ou escadas de prédio, e os dias preferidos. Vai receber um orçamento personalizado e horários disponíveis."></p>
+            <p class="section-sub">
+              Send a quick message on WhatsApp with your area in Jersey, if it’s for a house, office or building staircase, and your preferred days. You’ll receive a personalised quote and available times.
+            </p>
 
             <div class="pill-row">
-              <span class="pill" data-en="Homes across Jersey" data-pt="Casas em toda a ilha"></span>
-              <span class="pill" data-en="Flats & houses" data-pt="Apartamentos e moradias"></span>
-              <span class="pill" data-en="Offices & small businesses" data-pt="Escritórios e pequenos negócios"></span>
-              <span class="pill" data-en="Buildings & staircases" data-pt="Prédios e escadas"></span>
+              <span class="pill">Homes across Jersey</span>
+              <span class="pill">Flats & houses</span>
+              <span class="pill">Offices & small businesses</span>
+              <span class="pill">Buildings & staircases</span>
             </div>
 
             <div style="margin-top:1rem;">
               <a href="https://wa.me/447700335389?text=Hi%20Swift%20Cleaning%2C%20I%27d%20like%20to%20ask%20about%20cleaning%20availability." target="_blank" rel="noopener">
-                <button class="btn-primary" type="button" style="width:100%;" data-en="Open WhatsApp and send a message" data-pt="Abrir o WhatsApp e enviar mensagem"></button>
+                <button class="btn-primary" type="button" style="width:100%;">Open WhatsApp and send a message</button>
               </a>
             </div>
           </aside>
@@ -901,9 +888,9 @@
       <div class="footer-inner">
         <div>
           <strong>Swift Cleaning Services in Jersey</strong>
-          <span data-en=" – cleaning for homes, offices and building staircases across Jersey." data-pt=" – limpeza de casas, escritórios e escadas de prédios em Jersey."></span>
+          <span> – cleaning for homes, offices and building staircases across Jersey.</span>
         </div>
-        <div data-en="Bookings and quotes via WhatsApp." data-pt="Reservas e orçamentos através de WhatsApp."></div>
+        <div>Bookings and quotes via WhatsApp.</div>
       </div>
     </div>
   </footer>
@@ -920,8 +907,8 @@
     <div class="chatbot-header-main">
       <div class="chatbot-avatar">S</div>
       <div>
-        <div class="chatbot-title" data-en="Swift Cleaning assistant" data-pt="Assistente Swift Cleaning"></div>
-        <div class="chatbot-sub" data-en="Ask a quick question or request a quote." data-pt="Faça uma pergunta rápida ou peça um orçamento."></div>
+        <div class="chatbot-title">Swift Cleaning assistant</div>
+        <div class="chatbot-sub">Ask a quick question or request a quote.</div>
       </div>
     </div>
     <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">×</button>
@@ -929,58 +916,32 @@
 
   <div class="chatbot-body" id="chatbotBody">
     <div class="chat-msg bot">
-      <div class="bubble" data-en="Hi! 👋 How can we help you today?" data-pt="Olá! 👋 Como a podemos ajudar hoje?"></div>
+      <div class="bubble">Hi! 👋 How can we help you today?</div>
     </div>
     <div class="chat-msg bot">
-      <div class="bubble" data-en="Choose one of the options below or open WhatsApp for a personalised quote." data-pt="Escolha uma das opções abaixo ou abra o WhatsApp para um orçamento personalizado."></div>
+      <div class="bubble">Choose one of the options below or open WhatsApp for a personalised quote.</div>
     </div>
 
     <div class="chat-quick" id="chatQuick">
-      <button class="chat-chip" data-question-en="I’d like a quote for cleaning my house or apartment." data-question-pt="Quero um orçamento para limpar a minha casa ou apartamento.">
-        <span data-en="Quote for my house" data-pt="Orçamento para a minha casa"></span>
+      <button class="chat-chip" data-question="I’d like a quote for cleaning my house or apartment.">
+        <span>Quote for my house</span>
       </button>
-      <button class="chat-chip" data-question-en="Do you offer regular weekly or fortnightly cleaning for homes or offices?" data-question-pt="Fazem limpezas semanais ou quinzenais para casas ou escritórios?">
-        <span data-en="Regular cleaning" data-pt="Limpezas regulares"></span>
+      <button class="chat-chip" data-question="Do you offer regular weekly or fortnightly cleaning for homes or offices?">
+        <span>Regular cleaning</span>
       </button>
-      <button class="chat-chip" data-question-en="I need the staircases and communal areas of a building cleaned." data-question-pt="Preciso de limpeza para as escadas e áreas comuns de um prédio.">
-        <span data-en="Building staircases" data-pt="Escadas de prédio"></span>
+      <button class="chat-chip" data-question="I need the staircases and communal areas of a building cleaned.">
+        <span>Building staircases</span>
       </button>
     </div>
   </div>
 
   <div class="chat-footer">
-    <div class="chat-note" data-en="For detailed quotes we’ll reply directly on WhatsApp." data-pt="Para orçamentos detalhados respondemos diretamente no WhatsApp."></div>
-    <button class="btn-whatsapp-small" id="chatWhatsApp" type="button" data-en="Open WhatsApp" data-pt="Abrir WhatsApp"></button>
+    <div class="chat-note">For detailed quotes we’ll reply directly on WhatsApp.</div>
+    <button class="btn-whatsapp-small" id="chatWhatsApp" type="button">Open WhatsApp</button>
   </div>
 </div>
 
 <script>
-  // Tradução EN/PT
-  const langButtons = document.querySelectorAll('[data-lang-btn]');
-  const translatable = document.querySelectorAll('[data-en][data-pt]');
-  let currentLang = 'en';
-
-  function setLanguage(lang) {
-    currentLang = lang;
-    document.documentElement.lang = lang === 'pt' ? 'pt' : 'en';
-
-    translatable.forEach(el => {
-      const text = el.getAttribute(lang === 'pt' ? 'data-pt' : 'data-en');
-      if (text !== null) el.textContent = text;
-    });
-
-    langButtons.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.langBtn === lang);
-    });
-  }
-
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => setLanguage(btn.dataset.langBtn));
-  });
-
-  // Iniciar em inglês
-  setLanguage('en');
-
   // CHATBOT
   const chatbotToggle = document.getElementById('chatbotToggle');
   const chatbotPanel = document.getElementById('chatbotPanel');
@@ -1014,18 +975,14 @@
     const chip = e.target.closest('.chat-chip');
     if (!chip) return;
 
-    const question = currentLang === 'pt'
-      ? chip.getAttribute('data-question-pt')
-      : chip.getAttribute('data-question-en');
-
+    const question = chip.getAttribute('data-question');
     if (!question) return;
 
     addMessage(question, 'user');
 
-    const replyEn = "Thanks! 👌 Please tap the WhatsApp button below and send us your address in Jersey, if it’s for a house, office or building staircase, and your preferred dates. We’ll reply with a quote.";
-    const replyPt = "Obrigado! 👌 Clique no botão de WhatsApp em baixo e envie a sua morada em Jersey, diga se é para casa, escritório ou escadas de prédio, e as datas preferidas. Respondemos com um orçamento.";
+    const reply = "Thanks! 👌 Please tap the WhatsApp button below and send us your address in Jersey, say if it’s for a house, office or building staircase, and your preferred dates. We’ll reply with a quote.";
 
-    addMessage(currentLang === 'pt' ? replyPt : replyEn, 'bot');
+    addMessage(reply, 'bot');
   });
 
   const whatsappUrl = "https://wa.me/447700335389";
@@ -1035,4 +992,4 @@
   });
 </script>
 </body>
-  </html>
+</html>
