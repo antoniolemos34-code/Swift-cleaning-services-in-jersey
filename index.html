@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Swift Cleaning Service – Professional Cleaning in Jersey</title>
-  <meta name="description" content="Swift Cleaning Service provides professional cleaning for homes, offices and end of tenancy in Jersey. Reliable local team, flexible schedules and high standards." />
+  <meta name="description" content="Swift Cleaning Service provides professional cleaning for homes, apartments, offices and end of tenancy in Jersey. Reliable local team, flexible schedules and high standards." />
 
   <style>
     :root {
       --swift-blue: #0054a6;
       --swift-yellow: #ffc72c;
-      --swift-dark: #07111f;
-      --swift-light: #f5f7fb;
-      --border: #d4deea;
-      --radius-lg: 18px;
-      --radius-full: 999px;
-      --shadow-soft: 0 20px 60px rgba(15, 23, 42, 0.45);
+      --swift-text: #1d1d1f;
+      --swift-muted: #6e6e73;
+      --swift-border: #d2d2d7;
+      --swift-bg: #f5f5f7;
+      --radius-pill: 999px;
+      --radius-card: 24px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.06);
     }
 
     * {
@@ -25,15 +26,12 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #020617;
-      color: #e5e7eb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: #ffffff;
+      color: var(--swift-text);
       line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
     }
 
     img {
@@ -41,30 +39,32 @@
       display: block;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     .page {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: radial-gradient(circle at top left, #0b1120 0, #020617 55%, #020617 100%);
     }
 
     .container {
       width: 100%;
-      max-width: 1120px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    /* HEADER */
-    .site-header {
-      position: fixed;
+    /* HEADER – estilo Apple */
+    header {
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
+      z-index: 40;
       backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.4), transparent);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(210, 210, 215, 0.6);
     }
 
     .header-inner {
@@ -72,9 +72,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 10px 20px;
-      max-width: 1120px;
-      margin: 0 auto;
+      padding: 10px 0;
     }
 
     .logo-wrap {
@@ -94,24 +92,23 @@
     }
 
     .logo-text span:first-child {
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #9ca3af;
-      font-weight: 600;
+      color: var(--swift-muted);
     }
 
     .logo-text span:last-child {
       font-size: 0.9rem;
-      color: #e5e7eb;
+      color: #3a3a3c;
     }
 
     nav ul {
-      display: flex;
       list-style: none;
+      display: flex;
       gap: 22px;
       font-size: 0.9rem;
-      color: #cbd5f5;
+      color: var(--swift-muted);
     }
 
     nav a {
@@ -126,7 +123,7 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: var(--swift-yellow);
+      background: var(--swift-blue);
       border-radius: 999px;
       transition: width 0.22s ease;
     }
@@ -143,276 +140,204 @@
 
     .pill {
       padding: 6px 14px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      font-size: 0.8rem;
-      color: #e5e7eb;
-      background: rgba(15, 23, 42, 0.85);
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--swift-border);
+      font-size: 0.78rem;
+      color: var(--swift-muted);
+      background: #ffffff;
     }
 
     .btn-main {
-      border-radius: var(--radius-full);
-      padding: 8px 20px;
+      border-radius: var(--radius-pill);
+      padding: 7px 18px;
       font-size: 0.9rem;
       font-weight: 600;
-      background: linear-gradient(135deg, var(--swift-yellow), #ffd65c);
       border: none;
-      color: #111827;
-      box-shadow: 0 14px 40px rgba(250, 204, 21, 0.55);
+      background: var(--swift-blue);
+      color: #ffffff;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
-      text-decoration: none;
-      white-space: nowrap;
+      box-shadow: 0 10px 24px rgba(0, 84, 166, 0.25);
+      transition: transform 0.18s ease, box-shadow 0.18s ease,
+        background 0.18s ease;
     }
 
     .btn-main:hover {
       transform: translateY(-1px);
-      filter: brightness(1.05);
-      box-shadow: 0 20px 50px rgba(250, 204, 21, 0.75);
+      background: #00418a;
+      box-shadow: 0 16px 32px rgba(0, 84, 166, 0.35);
     }
 
-    .btn-outline {
-      border-radius: var(--radius-full);
-      padding: 8px 18px;
+    .btn-secondary {
+      border-radius: var(--radius-pill);
+      padding: 7px 18px;
       font-size: 0.9rem;
       font-weight: 500;
-      background: transparent;
-      border: 1px solid rgba(148, 163, 184, 0.85);
-      color: #e5e7eb;
+      border: 1px solid var(--swift-border);
+      background: #ffffff;
+      color: var(--swift-text);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
       transition: background 0.18s ease, border-color 0.18s ease;
-      text-decoration: none;
-      white-space: nowrap;
     }
 
-    .btn-outline:hover {
-      background: rgba(15, 23, 42, 0.95);
-      border-color: var(--swift-blue);
+    .btn-secondary:hover {
+      background: var(--swift-bg);
+      border-color: #b0b0b5;
     }
 
     /* HERO */
     .hero {
-      position: relative;
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      padding: 110px 0 60px; /* espaço por causa do header */
-      color: #f9fafb;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background-image:
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.25), rgba(15, 23, 42, 0.9)),
-        url("https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg");
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.1);
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.4) 0, transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(234, 179, 8, 0.25) 0, transparent 50%);
-      mix-blend-mode: soft-light;
+      padding: 40px 0 44px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 40px;
       align-items: center;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.6);
       font-size: 0.78rem;
-      color: #e5e7eb;
-      margin-bottom: 14px;
-    }
-
-    .eyebrow span.dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--swift-yellow);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--swift-muted);
+      margin-bottom: 10px;
     }
 
     .hero-title {
-      font-size: clamp(2.4rem, 4.6vw, 3.2rem);
-      line-height: 1.1;
+      font-size: clamp(2.3rem, 4vw, 3rem);
+      font-weight: 600;
       letter-spacing: -0.03em;
+      color: var(--swift-text);
       margin-bottom: 14px;
     }
 
     .hero-title span.highlight {
-      color: var(--swift-yellow);
+      color: var(--swift-blue);
     }
 
     .hero-sub {
       font-size: 1rem;
-      color: #e2e8f0;
-      max-width: 520px;
-      margin-bottom: 20px;
+      color: var(--swift-muted);
+      max-width: 480px;
+      margin-bottom: 18px;
     }
 
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 22px;
+      gap: 8px;
+      margin-bottom: 18px;
       font-size: 0.82rem;
     }
 
     .hero-badges span {
       padding: 6px 12px;
-      border-radius: var(--radius-full);
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      color: #cbd5f5;
+      border-radius: var(--radius-pill);
+      background: var(--swift-bg);
+      border: 1px solid var(--swift-border);
+      color: #3a3a3c;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
     .hero-note {
       font-size: 0.8rem;
-      color: #cbd5f5;
+      color: var(--swift-muted);
     }
 
     .hero-note strong {
-      color: var(--swift-yellow);
+      color: var(--swift-blue);
     }
 
-    .hero-card {
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 22px;
-      padding: 18px 18px 20px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
+    .hero-visual {
+      background: var(--swift-bg);
+      border-radius: var(--radius-card);
+      padding: 14px;
       box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(10px);
+      border: 1px solid var(--swift-border);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
-    .hero-card-header {
+    .hero-image {
+      border-radius: 18px;
+      overflow: hidden;
+      max-height: 260px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-quick {
       display: flex;
       justify-content: space-between;
-      gap: 10px;
-      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--swift-muted);
     }
 
-    .hero-card-title {
-      font-size: 0.95rem;
+    .hero-quick-block {
+      flex: 1;
+    }
+
+    .hero-quick-title {
+      font-size: 0.8rem;
       font-weight: 600;
-    }
-
-    .hero-tag {
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      font-size: 0.75rem;
-      background: rgba(22, 163, 74, 0.2);
-      border: 1px solid rgba(22, 163, 74, 0.7);
-      color: #bbf7d0;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      font-size: 0.78rem;
-    }
-
-    .stat {
-      padding: 10px 10px;
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-    }
-
-    .stat-label {
-      color: #9ca3af;
+      color: var(--swift-text);
       margin-bottom: 4px;
     }
 
-    .stat-value {
-      font-weight: 600;
-      color: var(--swift-yellow);
-    }
-
-    .mini-list {
-      font-size: 0.82rem;
-      color: #cbd5f5;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .mini-list span::before {
-      content: "• ";
-      color: var(--swift-yellow);
-    }
-
-    /* SECTIONS */
-    main {
-      background: radial-gradient(circle at top left, #020617 0, #020617 55%, #020617 100%);
-    }
-
+    /* SEÇÕES BASE */
     section {
-      padding: 50px 0 40px;
+      padding: 32px 0;
     }
 
     .section-head {
       text-align: center;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .section-eyebrow {
       font-size: 0.78rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #9ca3af;
+      color: var(--swift-muted);
       margin-bottom: 6px;
     }
 
     .section-title {
       font-size: 1.6rem;
-      color: #f9fafb;
-      margin-bottom: 6px;
       letter-spacing: -0.02em;
+      color: var(--swift-text);
+      margin-bottom: 6px;
     }
 
     .section-sub {
       font-size: 0.92rem;
-      color: #9ca3af;
+      color: var(--swift-muted);
       max-width: 520px;
       margin: 0 auto;
     }
 
-    /* SERVICES (cards com fotos) */
+    /* SERVICES */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -421,24 +346,24 @@
     }
 
     .service-card {
-      background: #020617;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31, 41, 55, 0.9);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid var(--swift-border);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
       overflow: hidden;
       display: flex;
       flex-direction: column;
     }
 
     .service-image {
-      height: 160px;
+      height: 150px;
       overflow: hidden;
     }
+
     .service-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.02);
     }
 
     .service-body {
@@ -452,32 +377,32 @@
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.13em;
-      color: var(--swift-yellow);
+      color: var(--swift-blue);
       font-weight: 600;
     }
 
     .service-title {
       font-size: 1rem;
       font-weight: 600;
-      color: #e5e7eb;
+      color: var(--swift-text);
     }
 
     .service-text {
       font-size: 0.86rem;
-      color: #9ca3af;
+      color: var(--swift-muted);
     }
 
     .service-meta {
       font-size: 0.8rem;
-      color: #cbd5f5;
+      color: #3a3a3c;
       margin-top: 4px;
     }
 
-    /* ABOUT / WHY */
+    /* WHY SWIFT */
     .two-col {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 26px;
+      gap: 28px;
       align-items: center;
     }
 
@@ -487,7 +412,7 @@
       gap: 10px;
       margin-top: 10px;
       font-size: 0.9rem;
-      color: #d1d5db;
+      color: var(--swift-muted);
     }
 
     .check-item {
@@ -500,7 +425,7 @@
       width: 18px;
       height: 18px;
       border-radius: 999px;
-      border: 2px solid var(--swift-yellow);
+      border: 2px solid var(--swift-blue);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -515,59 +440,25 @@
     }
 
     .about-image {
-      border-radius: 22px;
+      border-radius: var(--radius-card);
       overflow: hidden;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(30, 64, 175, 0.9);
-      max-height: 280px;
+      border: 1px solid var(--swift-border);
+      max-height: 260px;
     }
 
     .about-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.03);
-    }
-
-    /* GALLERY STRIP */
-    .gallery-strip {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .gallery-item {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      height: 150px;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .gallery-label {
-      position: absolute;
-      left: 8px;
-      bottom: 8px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      background: rgba(15, 23, 42, 0.85);
-      color: #f9fafb;
     }
 
     /* CONTACT */
     .contact-card {
-      background: #020617;
-      border-radius: 24px;
+      background: #ffffff;
+      border-radius: var(--radius-card);
       padding: 20px 18px 22px;
-      border: 1px solid rgba(31, 41, 55, 0.9);
+      border: 1px solid var(--swift-border);
       box-shadow: var(--shadow-soft);
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -577,7 +468,7 @@
 
     .contact-info {
       font-size: 0.9rem;
-      color: #d1d5db;
+      color: var(--swift-muted);
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -592,7 +483,7 @@
 
     .contact-label {
       font-weight: 600;
-      color: #f9fafb;
+      color: var(--swift-text);
     }
 
     .contact-form {
@@ -606,27 +497,27 @@
       flex-direction: column;
       gap: 4px;
       font-size: 0.8rem;
-      color: #cbd5f5;
+      color: var(--swift-muted);
     }
 
     .field-group input,
     .field-group textarea {
       border-radius: 12px;
-      border: 1px solid #1e293b;
+      border: 1px solid var(--swift-border);
       padding: 8px 10px;
       font-family: inherit;
       font-size: 0.86rem;
       outline: none;
-      background: #020617;
-      color: #e5e7eb;
-      transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      background: var(--swift-bg);
+      transition: border-color 0.16s ease, box-shadow 0.16s ease,
+        background 0.16s ease;
     }
 
     .field-group input:focus,
     .field-group textarea:focus {
       border-color: var(--swift-blue);
-      background: #020617;
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.5);
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(0, 84, 166, 0.25);
     }
 
     .field-inline {
@@ -643,18 +534,15 @@
 
     /* FOOTER */
     footer {
-      border-top: 1px solid rgba(30, 64, 175, 0.7);
-      padding: 14px 0 18px;
-      margin-top: 30px;
+      border-top: 1px solid var(--swift-border);
+      padding: 16px 0 20px;
+      margin-top: 32px;
       font-size: 0.8rem;
-      color: #9ca3af;
-      background: #020617;
+      color: var(--swift-muted);
+      background: #ffffff;
     }
 
     .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -668,12 +556,8 @@
       flex-wrap: wrap;
     }
 
-    .footer-links span {
-      color: #6b7280;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 960px) {
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
       .hero-grid,
       .two-col,
       .contact-card {
@@ -684,12 +568,12 @@
         display: none; /* simples no mobile, sem menu burger */
       }
 
-      .site-header {
-        background: rgba(2, 6, 23, 0.96);
+      .header-inner {
+        padding: 8px 0;
       }
 
       .hero {
-        padding-top: 100px;
+        padding-top: 28px;
       }
     }
 
@@ -698,12 +582,8 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .gallery-strip {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero-card {
-        margin-top: 10px;
+      .hero-visual {
+        margin-top: 8px;
       }
     }
 
@@ -718,12 +598,8 @@
       }
 
       .btn-main,
-      .btn-outline {
+      .btn-secondary {
         width: 100%;
-      }
-
-      .hero {
-        padding-bottom: 40px;
       }
     }
   </style>
@@ -731,29 +607,31 @@
 <body>
   <div class="page">
     <!-- HEADER -->
-    <header class="site-header">
-      <div class="header-inner">
-        <div class="logo-wrap">
-          <!-- IMPORTANTE: o ficheiro no GitHub deve chamar-se exatamente Swift-logo.jpg -->
-          <img src="Swift-logo.jpg" alt="Swift Cleaning Service logo">
-          <div class="logo-text">
-            <span>Jersey · Channel Islands</span>
-            <span>Professional cleaning for homes & businesses</span>
+    <header>
+      <div class="container">
+        <div class="header-inner">
+          <div class="logo-wrap">
+            <!-- IMPORTANTE: ficheiro exatamente "Swift-logo.jpg" -->
+            <img src="Swift-logo.jpg" alt="Swift Cleaning Service logo">
+            <div class="logo-text">
+              <span>Jersey · Channel Islands</span>
+              <span>Professional cleaning for homes & businesses</span>
+            </div>
           </div>
-        </div>
 
-        <nav>
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">Why Swift</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+          <nav>
+            <ul>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#why">Why Swift</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
 
-        <div class="header-cta">
-          <div class="pill">Free, no-obligation quote</div>
-          <!-- TROCAR PELO NÚMERO REAL -->
-          <a href="tel:+447700000000" class="btn-main">Call now</a>
+          <div class="header-cta">
+            <div class="pill">Free, no-obligation quote</div>
+            <!-- TROCAR PELO NÚMERO REAL -->
+            <a href="tel:+447700000000" class="btn-main">Call now</a>
+          </div>
         </div>
       </div>
     </header>
@@ -761,24 +639,16 @@
     <main>
       <!-- HERO -->
       <section class="hero" id="top">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-
         <div class="container">
           <div class="hero-grid">
             <div>
-              <div class="eyebrow">
-                <span class="dot"></span>
-                Commercial & domestic cleaning in Jersey
-              </div>
-
+              <div class="eyebrow">Commercial & domestic cleaning in Jersey</div>
               <h1 class="hero-title">
-                Spotless <span class="highlight">spaces</span><br />
-                trusted by local businesses & homes.
+                Spotless <span class="highlight">homes & workplaces</span><br />
+                cleaned the Swift way.
               </h1>
-
               <p class="hero-sub">
-                Swift Cleaning Service provides reliable, high-standard cleaning for apartments, houses, offices and staircases across Jersey – so you get a fresh space without losing your time.
+                Swift Cleaning Service offers reliable, high-standard cleaning for apartments, houses, offices and staircases across Jersey – so you get a fresh space without losing your time.
               </p>
 
               <div class="hero-badges">
@@ -792,7 +662,7 @@
                 <a href="https://wa.me/447700000000" class="btn-main">
                   WhatsApp for a quote
                 </a>
-                <a href="#services" class="btn-outline">
+                <a href="#services" class="btn-secondary">
                   View services
                 </a>
               </div>
@@ -802,34 +672,24 @@
               </p>
             </div>
 
-            <aside class="hero-card">
-              <div class="hero-card-header">
-                <div>
-                  <div class="hero-card-title">Your next clean in just 3 steps</div>
-                  <div style="font-size:0.8rem;color:#cbd5f5;">Tell us what you need – we handle the rest.</div>
-                </div>
-                <div class="hero-tag">Average reply under 1 hour*</div>
+            <aside class="hero-visual">
+              <div class="hero-image">
+                <!-- imagem hero: 4099467 -->
+                <img src="https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg" alt="Cleaner working in a bright living room">
               </div>
-
-              <div class="hero-stats">
-                <div class="stat">
-                  <div class="stat-label">Homes & flats</div>
-                  <div class="stat-value">Weekly / bi-weekly</div>
+              <div class="hero-quick">
+                <div class="hero-quick-block">
+                  <div class="hero-quick-title">Homes & flats</div>
+                  <div>Weekly / bi-weekly, tailored to your routine.</div>
                 </div>
-                <div class="stat">
-                  <div class="stat-label">End of tenancy</div>
-                  <div class="stat-value">Full deep clean</div>
+                <div class="hero-quick-block">
+                  <div class="hero-quick-title">End of tenancy</div>
+                  <div>Full deep clean, inside cupboards & appliances.</div>
                 </div>
-                <div class="stat">
-                  <div class="stat-label">Offices & stairs</div>
-                  <div class="stat-value">Out-of-hours</div>
+                <div class="hero-quick-block">
+                  <div class="hero-quick-title">Offices</div>
+                  <div>Out-of-hours cleaning to avoid disruption.</div>
                 </div>
-              </div>
-
-              <div class="mini-list">
-                <span>Share your property type, size and preferred days.</span>
-                <span>Receive a clear quote with what’s included.</span>
-                <span>Our team arrives on time – with all products included.</span>
               </div>
             </aside>
           </div>
@@ -897,7 +757,7 @@
       </section>
 
       <!-- WHY SWIFT -->
-      <section id="about">
+      <section id="why">
         <div class="container">
           <div class="two-col">
             <div>
@@ -937,30 +797,6 @@
             <div class="about-image">
               <!-- 713297 -->
               <img src="https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg" alt="Clean modern kitchen after professional cleaning">
-            </div>
-          </div>
-
-          <!-- Gallery estilo Sonnic -->
-          <div class="gallery-strip">
-            <div class="gallery-item">
-              <!-- 38325 -->
-              <img src="https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housework-housekeeping-38325.jpeg" alt="Vacuum cleaning a carpet">
-              <div class="gallery-label">Carpets & floors</div>
-            </div>
-            <div class="gallery-item">
-              <!-- 6196228 (construção) -->
-              <img src="https://images.pexels.com/photos/6196228/pexels-photo-6196228.jpeg" alt="Team checking building under construction">
-              <div class="gallery-label">Builders clean</div>
-            </div>
-            <div class="gallery-item">
-              <!-- 4099467 -->
-              <img src="https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg" alt="Cleaner working in living room">
-              <div class="gallery-label">Deep cleaning</div>
-            </div>
-            <div class="gallery-item">
-              <!-- 3993450 outra vez -->
-              <img src="https://images.pexels.com/photos/3993450/pexels-photo-3993450.jpeg" alt="End of tenancy clean">
-              <div class="gallery-label">End of tenancy</div>
             </div>
           </div>
         </div>
@@ -1006,7 +842,7 @@
                 <span>Mon–Sat · 08:00 – 18:00</span>
               </div>
 
-              <p style="font-size:0.8rem;color:#9ca3af;margin-top:6px;">
+              <p style="font-size:0.78rem;color:#a1a1a6;margin-top:6px;">
                 *Response times may vary outside working hours.
               </p>
             </div>
@@ -1042,7 +878,7 @@
               <button type="submit" class="btn-main" style="margin-top:4px;align-self:flex-start;">
                 Send request
               </button>
-              <div style="font-size:0.78rem;color:#9ca3af;margin-top:4px;">
+              <div style="font-size:0.78rem;color:#a1a1a6;margin-top:4px;">
                 This form is for layout only. Connect it to your email or a form service to receive messages.
               </div>
             </form>
@@ -1053,11 +889,13 @@
 
     <!-- FOOTER -->
     <footer>
-      <div class="footer-inner">
-        <div>© <span id="year"></span> Swift Cleaning Service. All rights reserved.</div>
-        <div class="footer-links">
-          <span>Jersey · Channel Islands</span>
-          <span>Professional cleaning for homes & businesses</span>
+      <div class="container">
+        <div class="footer-inner">
+          <div>© <span id="year"></span> Swift Cleaning Service. All rights reserved.</div>
+          <div class="footer-links">
+            <span>Jersey · Channel Islands</span>
+            <span>Professional cleaning for homes & businesses</span>
+          </div>
         </div>
       </div>
     </footer>
