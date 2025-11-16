@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Swift Cleaning Service – Professional Cleaning in Jersey</title>
-  <meta name="description" content="Swift Cleaning Service in Jersey – professional cleaning for homes, offices and end of tenancy. Reliable, friendly team for a spotless space." />
+  <meta name="description" content="Swift Cleaning Service provides professional cleaning for homes, offices and end of tenancy in Jersey. Reliable local team, flexible schedules and high standards." />
 
   <style>
     :root {
       --swift-blue: #0054a6;
       --swift-yellow: #ffc72c;
-      --swift-dark: #0f172a;
-      --swift-light: #f7f9fc;
-      --border: #dde4f0;
+      --swift-dark: #07111f;
+      --swift-light: #f5f7fb;
+      --border: #d4deea;
       --radius-lg: 18px;
       --radius-full: 999px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.14);
+      --shadow-soft: 0 20px 60px rgba(15, 23, 42, 0.45);
     }
 
     * {
@@ -27,8 +26,8 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #ffffff 0, #f5f7fb 40%, #eaf1ff 100%);
-      color: var(--swift-dark);
+      background: #020617;
+      color: #e5e7eb;
       line-height: 1.6;
     }
 
@@ -46,6 +45,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      background: radial-gradient(circle at top left, #0b1120 0, #020617 55%, #020617 100%);
     }
 
     .container {
@@ -56,13 +56,15 @@
     }
 
     /* HEADER */
-    header {
-      position: sticky;
+    .site-header {
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 50;
       backdrop-filter: blur(16px);
-      background: rgba(255, 255, 255, 0.92);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.4), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
     }
 
     .header-inner {
@@ -70,7 +72,9 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 12px 0;
+      padding: 10px 20px;
+      max-width: 1120px;
+      margin: 0 auto;
     }
 
     .logo-wrap {
@@ -80,7 +84,7 @@
     }
 
     .logo-wrap img {
-      height: 60px;
+      height: 52px;
     }
 
     .logo-text {
@@ -90,16 +94,16 @@
     }
 
     .logo-text span:first-child {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #64748b;
+      color: #9ca3af;
       font-weight: 600;
     }
 
     .logo-text span:last-child {
       font-size: 0.9rem;
-      color: #0f172a;
+      color: #e5e7eb;
     }
 
     nav ul {
@@ -107,7 +111,7 @@
       list-style: none;
       gap: 22px;
       font-size: 0.9rem;
-      color: #475569;
+      color: #cbd5f5;
     }
 
     nav a {
@@ -140,10 +144,10 @@
     .pill {
       padding: 6px 14px;
       border-radius: var(--radius-full);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       font-size: 0.8rem;
-      color: #475569;
-      background: white;
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.85);
     }
 
     .btn-main {
@@ -151,10 +155,10 @@
       padding: 8px 20px;
       font-size: 0.9rem;
       font-weight: 600;
-      background: linear-gradient(135deg, var(--swift-yellow), #ffd54a);
+      background: linear-gradient(135deg, var(--swift-yellow), #ffd65c);
       border: none;
-      color: #0f172a;
-      box-shadow: 0 12px 30px rgba(251, 191, 36, 0.5);
+      color: #111827;
+      box-shadow: 0 14px 40px rgba(250, 204, 21, 0.55);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -162,12 +166,13 @@
       gap: 6px;
       transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .btn-main:hover {
       transform: translateY(-1px);
       filter: brightness(1.05);
-      box-shadow: 0 18px 40px rgba(251, 191, 36, 0.65);
+      box-shadow: 0 20px 50px rgba(250, 204, 21, 0.75);
     }
 
     .btn-outline {
@@ -176,8 +181,8 @@
       font-size: 0.9rem;
       font-weight: 500;
       background: transparent;
-      border: 1px solid rgba(148, 163, 184, 0.8);
-      color: #0f172a;
+      border: 1px solid rgba(148, 163, 184, 0.85);
+      color: #e5e7eb;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -185,22 +190,50 @@
       gap: 6px;
       transition: background 0.18s ease, border-color 0.18s ease;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .btn-outline:hover {
-      background: rgba(241, 245, 249, 0.95);
+      background: rgba(15, 23, 42, 0.95);
       border-color: var(--swift-blue);
     }
 
     /* HERO */
     .hero {
-      padding: 40px 0 36px;
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      padding: 110px 0 60px; /* espaço por causa do header */
+      color: #f9fafb;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.25), rgba(15, 23, 42, 0.9)),
+        url("https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.1);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.4) 0, transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(234, 179, 8, 0.25) 0, transparent 50%);
+      mix-blend-mode: soft-light;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 38px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 40px;
       align-items: center;
     }
 
@@ -210,10 +243,10 @@
       gap: 8px;
       padding: 4px 12px;
       border-radius: var(--radius-full);
-      background: rgba(0, 84, 166, 0.05);
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       font-size: 0.78rem;
-      color: var(--swift-blue);
+      color: #e5e7eb;
       margin-bottom: 14px;
     }
 
@@ -225,100 +258,136 @@
     }
 
     .hero-title {
-      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-size: clamp(2.4rem, 4.6vw, 3.2rem);
       line-height: 1.1;
-      color: var(--swift-dark);
-      margin-bottom: 14px;
       letter-spacing: -0.03em;
+      margin-bottom: 14px;
     }
 
     .hero-title span.highlight {
-      color: var(--swift-blue);
+      color: var(--swift-yellow);
     }
 
     .hero-sub {
-      font-size: 0.98rem;
-      color: #4b5563;
-      max-width: 480px;
-      margin-bottom: 18px;
+      font-size: 1rem;
+      color: #e2e8f0;
+      max-width: 520px;
+      margin-bottom: 20px;
     }
 
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 20px;
-      font-size: 0.8rem;
+      margin-bottom: 22px;
+      font-size: 0.82rem;
     }
 
     .hero-badges span {
       padding: 6px 12px;
       border-radius: var(--radius-full);
-      background: white;
-      border: 1px solid var(--border);
-      color: #475569;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #cbd5f5;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .hero-note {
       font-size: 0.8rem;
-      color: #6b7280;
+      color: #cbd5f5;
     }
 
     .hero-note strong {
-      color: var(--swift-blue);
+      color: var(--swift-yellow);
     }
 
-    .hero-image-card {
-      position: relative;
-      border-radius: 26px;
-      overflow: hidden;
+    .hero-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 22px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      background: #000;
-      min-height: 260px;
-    }
-
-    .hero-image-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(1.05);
-    }
-
-    .hero-tag-overlay {
-      position: absolute;
-      left: 14px;
-      bottom: 14px;
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 16px;
-      padding: 8px 10px;
-      font-size: 0.8rem;
-      color: #374151;
+      backdrop-filter: blur(10px);
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 12px;
     }
 
-    .hero-tag-overlay span:first-child {
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
       font-weight: 600;
-      color: var(--swift-blue);
     }
 
-    /* SECTION BASE */
+    .hero-tag {
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      background: rgba(22, 163, 74, 0.2);
+      border: 1px solid rgba(22, 163, 74, 0.7);
+      color: #bbf7d0;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      font-size: 0.78rem;
+    }
+
+    .stat {
+      padding: 10px 10px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
+    .stat-label {
+      color: #9ca3af;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-weight: 600;
+      color: var(--swift-yellow);
+    }
+
+    .mini-list {
+      font-size: 0.82rem;
+      color: #cbd5f5;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mini-list span::before {
+      content: "• ";
+      color: var(--swift-yellow);
+    }
+
+    /* SECTIONS */
+    main {
+      background: radial-gradient(circle at top left, #020617 0, #020617 55%, #020617 100%);
+    }
+
     section {
-      padding: 28px 0;
+      padding: 50px 0 40px;
     }
 
     .section-head {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .section-eyebrow {
@@ -330,91 +399,95 @@
     }
 
     .section-title {
-      font-size: 1.5rem;
-      color: var(--swift-dark);
+      font-size: 1.6rem;
+      color: #f9fafb;
       margin-bottom: 6px;
       letter-spacing: -0.02em;
     }
 
     .section-sub {
       font-size: 0.92rem;
-      color: #6b7280;
+      color: #9ca3af;
       max-width: 520px;
       margin: 0 auto;
     }
 
-    /* SERVICES */
+    /* SERVICES (cards com fotos) */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .service-card {
-      background: white;
+      background: #020617;
       border-radius: var(--radius-lg);
-      padding: 14px 14px 16px;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 8px;
     }
 
-    .service-img {
-      border-radius: 14px;
+    .service-image {
+      height: 160px;
       overflow: hidden;
-      max-height: 140px;
     }
-
-    .service-img img {
+    .service-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transform: scale(1.02);
+    }
+
+    .service-body {
+      padding: 14px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
     .service-label {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--swift-blue);
+      letter-spacing: 0.13em;
+      color: var(--swift-yellow);
       font-weight: 600;
-      margin-top: 6px;
     }
 
     .service-title {
       font-size: 1rem;
       font-weight: 600;
-      color: var(--swift-dark);
+      color: #e5e7eb;
     }
 
     .service-text {
-      font-size: 0.88rem;
-      color: #6b7280;
+      font-size: 0.86rem;
+      color: #9ca3af;
     }
 
     .service-meta {
+      font-size: 0.8rem;
+      color: #cbd5f5;
       margin-top: 4px;
-      font-size: 0.78rem;
-      color: #4b5563;
     }
 
-    /* WHY / ABOUT */
+    /* ABOUT / WHY */
     .two-col {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 26px;
-      align-items: start;
+      align-items: center;
     }
 
     .check-list {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 0.9rem;
-      color: #4b5563;
+      color: #d1d5db;
     }
 
     .check-item {
@@ -427,7 +500,7 @@
       width: 18px;
       height: 18px;
       border-radius: 999px;
-      border: 2px solid var(--swift-blue);
+      border: 2px solid var(--swift-yellow);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -445,30 +518,31 @@
       border-radius: 22px;
       overflow: hidden;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      max-height: 260px;
+      border: 1px solid rgba(30, 64, 175, 0.9);
+      max-height: 280px;
     }
 
     .about-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transform: scale(1.03);
     }
 
-    /* GALLERY */
-    .gallery-grid {
+    /* GALLERY STRIP */
+    .gallery-strip {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 12px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
     }
 
     .gallery-item {
-      border-radius: 16px;
-      overflow: hidden;
       position: relative;
-      height: 170px;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
+      border-radius: 18px;
+      overflow: hidden;
+      height: 150px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
     }
 
     .gallery-item img {
@@ -481,29 +555,29 @@
       position: absolute;
       left: 8px;
       bottom: 8px;
-      background: rgba(0, 0, 0, 0.55);
-      color: white;
       padding: 4px 8px;
       border-radius: 999px;
       font-size: 0.75rem;
+      background: rgba(15, 23, 42, 0.85);
+      color: #f9fafb;
     }
 
     /* CONTACT */
     .contact-card {
-      background: white;
+      background: #020617;
       border-radius: 24px;
       padding: 20px 18px 22px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(31, 41, 55, 0.9);
       box-shadow: var(--shadow-soft);
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 22px;
-      margin-top: 10px;
+      margin-top: 14px;
     }
 
     .contact-info {
       font-size: 0.9rem;
-      color: #4b5563;
+      color: #d1d5db;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -518,7 +592,7 @@
 
     .contact-label {
       font-weight: 600;
-      color: var(--swift-dark);
+      color: #f9fafb;
     }
 
     .contact-form {
@@ -532,26 +606,27 @@
       flex-direction: column;
       gap: 4px;
       font-size: 0.8rem;
-      color: #4b5563;
+      color: #cbd5f5;
     }
 
     .field-group input,
     .field-group textarea {
       border-radius: 12px;
-      border: 1px solid #d1d5db;
+      border: 1px solid #1e293b;
       padding: 8px 10px;
       font-family: inherit;
       font-size: 0.86rem;
       outline: none;
-      background: #f9fafb;
+      background: #020617;
+      color: #e5e7eb;
       transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
     }
 
     .field-group input:focus,
     .field-group textarea:focus {
       border-color: var(--swift-blue);
-      background: white;
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+      background: #020617;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.5);
     }
 
     .field-inline {
@@ -568,14 +643,18 @@
 
     /* FOOTER */
     footer {
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
       padding: 14px 0 18px;
-      margin-top: 24px;
+      margin-top: 30px;
       font-size: 0.8rem;
       color: #9ca3af;
+      background: #020617;
     }
 
     .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -589,12 +668,12 @@
       flex-wrap: wrap;
     }
 
-    .footer-links a {
+    .footer-links span {
       color: #6b7280;
     }
 
-    /* RESPONSIVO */
-    @media (max-width: 900px) {
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
       .hero-grid,
       .two-col,
       .contact-card {
@@ -602,26 +681,29 @@
       }
 
       nav ul {
-        display: none; /* simples no mobile */
+        display: none; /* simples no mobile, sem menu burger */
       }
 
-      .header-inner {
-        padding: 10px 0;
+      .site-header {
+        background: rgba(2, 6, 23, 0.96);
       }
 
       .hero {
-        padding-top: 26px;
+        padding-top: 100px;
       }
     }
 
     @media (max-width: 720px) {
-      .services-grid,
-      .gallery-grid {
+      .services-grid {
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .hero-image-card {
-        order: -1;
+      .gallery-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-card {
+        margin-top: 10px;
       }
     }
 
@@ -640,8 +722,8 @@
         width: 100%;
       }
 
-      .gallery-item {
-        height: 190px;
+      .hero {
+        padding-bottom: 40px;
       }
     }
   </style>
@@ -649,32 +731,29 @@
 <body>
   <div class="page">
     <!-- HEADER -->
-    <header>
-      <div class="container">
-        <div class="header-inner">
-          <div class="logo-wrap">
-            <!-- LOGO: usa o ficheiro Swift-logo.jpg que já tens no repositório -->
-            <img src="Swift-logo.jpg" alt="Swift Cleaning Service logo">
-            <div class="logo-text">
-              <span>Jersey · Channel Islands</span>
-              <span>Professional cleaning for homes & businesses</span>
-            </div>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-wrap">
+          <!-- IMPORTANTE: o ficheiro no GitHub deve chamar-se exatamente Swift-logo.jpg -->
+          <img src="Swift-logo.jpg" alt="Swift Cleaning Service logo">
+          <div class="logo-text">
+            <span>Jersey · Channel Islands</span>
+            <span>Professional cleaning for homes & businesses</span>
           </div>
+        </div>
 
-          <nav>
-            <ul>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#why">Why Swift</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
+        <nav>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">Why Swift</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
 
-          <div class="header-cta">
-            <div class="pill">Free, no-obligation quote</div>
-            <!-- TROCAR PELO NÚMERO REAL -->
-            <a href="tel:+447700000000" class="btn-main">Call now</a>
-          </div>
+        <div class="header-cta">
+          <div class="pill">Free, no-obligation quote</div>
+          <!-- TROCAR PELO NÚMERO REAL -->
+          <a href="tel:+447700000000" class="btn-main">Call now</a>
         </div>
       </div>
     </header>
@@ -682,50 +761,77 @@
     <main>
       <!-- HERO -->
       <section class="hero" id="top">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
         <div class="container">
           <div class="hero-grid">
             <div>
               <div class="eyebrow">
                 <span class="dot"></span>
-                Trusted local cleaning service in Jersey
+                Commercial & domestic cleaning in Jersey
               </div>
+
               <h1 class="hero-title">
-                Spotless <span class="highlight">homes & workplaces</span><br />
-                cleaned the Swift way.
+                Spotless <span class="highlight">spaces</span><br />
+                trusted by local businesses & homes.
               </h1>
+
               <p class="hero-sub">
-                Swift Cleaning Service oferece limpezas profissionais para apartamentos, casas, escritórios e escadas comuns em toda Jersey – com horário flexível e uma equipa em que pode confiar.
+                Swift Cleaning Service provides reliable, high-standard cleaning for apartments, houses, offices and staircases across Jersey – so you get a fresh space without losing your time.
               </p>
 
               <div class="hero-badges">
-                <span>✓ Regular e one-off cleaning</span>
-                <span>✓ End of tenancy & deep clean</span>
-                <span>✓ Fully insured local team</span>
+                <span>Regular & one-off cleaning</span>
+                <span>End of tenancy & deep clean</span>
+                <span>Fully insured local team</span>
               </div>
 
               <div class="hero-actions">
                 <!-- TROCAR PELO WHATSAPP REAL -->
                 <a href="https://wa.me/447700000000" class="btn-main">
-                  WhatsApp para orçamento
+                  WhatsApp for a quote
                 </a>
                 <a href="#services" class="btn-outline">
-                  Ver todos os serviços
+                  View services
                 </a>
               </div>
 
               <p class="hero-note">
-                <strong>Serviço em toda a ilha</strong> · Horários flexíveis · Preços claros e competitivos.
+                <strong>Serving all of Jersey</strong> · Flexible schedules · Transparent, competitive pricing.
               </p>
             </div>
 
-            <div class="hero-image-card">
-              <!-- imagem: pexels-photo-4099467.jpeg -->
-              <img src="https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg" alt="Cleaning team working in a modern home">
-              <div class="hero-tag-overlay">
-                <span>Swift Cleaning Service</span>
-                <span>Real people · Real results · Jersey</span>
+            <aside class="hero-card">
+              <div class="hero-card-header">
+                <div>
+                  <div class="hero-card-title">Your next clean in just 3 steps</div>
+                  <div style="font-size:0.8rem;color:#cbd5f5;">Tell us what you need – we handle the rest.</div>
+                </div>
+                <div class="hero-tag">Average reply under 1 hour*</div>
               </div>
-            </div>
+
+              <div class="hero-stats">
+                <div class="stat">
+                  <div class="stat-label">Homes & flats</div>
+                  <div class="stat-value">Weekly / bi-weekly</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">End of tenancy</div>
+                  <div class="stat-value">Full deep clean</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Offices & stairs</div>
+                  <div class="stat-value">Out-of-hours</div>
+                </div>
+              </div>
+
+              <div class="mini-list">
+                <span>Share your property type, size and preferred days.</span>
+                <span>Receive a clear quote with what’s included.</span>
+                <span>Our team arrives on time – with all products included.</span>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -735,65 +841,71 @@
         <div class="container">
           <div class="section-head">
             <div class="section-eyebrow">Services</div>
-            <h2 class="section-title">Everything you need to keep it spotless</h2>
+            <h2 class="section-title">Cleaning solutions for every space</h2>
             <p class="section-sub">
-              Da limpeza doméstica regular a limpezas profundas e end of tenancy, adaptamos o serviço ao seu espaço e ao seu horário.
+              From regular domestic cleaning to commercial contracts and end of tenancy, Swift adapts to your property and your schedule.
             </p>
           </div>
 
           <div class="services-grid">
             <article class="service-card">
-              <div class="service-img">
-                <!-- pexels-photo-625279.jpeg -->
+              <div class="service-image">
+                <!-- 625279 -->
                 <img src="https://images.pexels.com/photos/625279/pexels-photo-625279.jpeg" alt="Cleaner vacuuming a bright living room">
               </div>
-              <div class="service-label">Homes & Apartments</div>
-              <div class="service-title">Regular domestic cleaning</div>
-              <p class="service-text">
-                Limpezas semanais, quinzenais ou mensais, com checklists claras: cozinha, casas de banho, quartos, pó, aspirar e lavar pavimentos.
-              </p>
-              <p class="service-meta">Ideal para famílias e profissionais com pouco tempo.</p>
+              <div class="service-body">
+                <div class="service-label">Homes & Apartments</div>
+                <div class="service-title">Regular domestic cleaning</div>
+                <p class="service-text">
+                  Weekly, bi-weekly or monthly cleans with clear checklists: kitchen, bathrooms, bedrooms, dusting, hoovering and mopping.
+                </p>
+                <p class="service-meta">Perfect for busy families and professionals.</p>
+              </div>
             </article>
 
             <article class="service-card">
-              <div class="service-img">
-                <!-- pexels-photo-3993450.jpeg -->
-                <img src="https://images.pexels.com/photos/3993450/pexels-photo-3993450.jpeg" alt="Team cleaning an empty apartment">
+              <div class="service-image">
+                <!-- 3993450 -->
+                <img src="https://images.pexels.com/photos/3993450/pexels-photo-3993450.jpeg" alt="Cleaning team in empty apartment">
               </div>
-              <div class="service-label">End of Tenancy</div>
-              <div class="service-title">Move-in / move-out & deep clean</div>
-              <p class="service-text">
-                Limpeza profunda para mudar de casa, entregar ao senhorio ou preparar para novos inquilinos. Interior de armários, eletrodomésticos, rodapés e mais.
-              </p>
-              <p class="service-meta">Ajuda a proteger o depósito e valorizar o imóvel.</p>
+              <div class="service-body">
+                <div class="service-label">End of Tenancy</div>
+                <div class="service-title">Move-in / move-out & deep cleans</div>
+                <p class="service-text">
+                  Deep cleaning for tenants, landlords and letting agents. Inside cupboards, appliances, skirting boards, limescale removal and more.
+                </p>
+                <p class="service-meta">Helps protect deposits and present your property at its best.</p>
+              </div>
             </article>
 
             <article class="service-card">
-              <div class="service-img">
-                <!-- pexels-photo-6195105.jpeg -->
-                <img src="https://images.pexels.com/photos/6195105/pexels-photo-6195105.jpeg" alt="Cleaner wiping office desk surface">
+              <div class="service-image">
+                <!-- 6195105 -->
+                <img src="https://images.pexels.com/photos/6195105/pexels-photo-6195105.jpeg" alt="Cleaner wiping an office desk">
               </div>
-              <div class="service-label">Offices & Staircases</div>
-              <div class="service-title">Commercial & common areas</div>
-              <p class="service-text">
-                Limpeza para escritórios, receções e escadas de prédios. Opções fora de horas para não interromper a sua equipa ou residentes.
-              </p>
-              <p class="service-meta">Espaços limpos e acolhedores para funcionários e visitantes.</p>
+              <div class="service-body">
+                <div class="service-label">Offices & Staircases</div>
+                <div class="service-title">Commercial & common areas</div>
+                <p class="service-text">
+                  Professional cleaning for offices, receptions and communal staircases. Out-of-hours options to avoid disrupting your team.
+                </p>
+                <p class="service-meta">Clean, welcoming spaces for staff and visitors.</p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
       <!-- WHY SWIFT -->
-      <section id="why">
+      <section id="about">
         <div class="container">
           <div class="two-col">
             <div>
-              <div class="section-head" style="text-align:left;margin-bottom:12px;">
+              <div class="section-head" style="text-align:left;margin-bottom:10px;">
                 <div class="section-eyebrow">Why Swift</div>
                 <h2 class="section-title">A local Jersey team that really cares</h2>
                 <p class="section-sub" style="margin:0;text-align:left;">
-                  Não somos uma grande franquia anónima. A Swift Cleaning Service é uma equipa local que conhece os clientes pelo nome e trata cada casa como se fosse a nossa.
+                  We’re not a big anonymous franchise. Swift Cleaning Service is a small, dedicated team that knows our clients by name and treats every space with care and discretion.
                 </p>
               </div>
 
@@ -801,76 +913,54 @@
                 <div class="check-item">
                   <div class="check-dot"><span></span></div>
                   <div>
-                    <strong>Qualidade consistente em cada visita</strong><br>
-                    Sempre que possível, a mesma pessoa ou equipa, com rotinas bem definidas para não falhar nada.
+                    <strong>Consistent quality on every visit</strong><br>
+                    Wherever possible you get the same trusted cleaner or team, following clear routines so nothing is missed.
                   </div>
                 </div>
                 <div class="check-item">
                   <div class="check-dot"><span></span></div>
                   <div>
-                    <strong>Produtos e material incluídos</strong><br>
-                    Levamos os nossos próprios produtos e equipamentos. Opções mais ecológicas disponíveis se desejar.
+                    <strong>Products & equipment included</strong><br>
+                    We bring our own professional products and tools. Eco-friendly options available on request.
                   </div>
                 </div>
                 <div class="check-item">
                   <div class="check-dot"><span></span></div>
                   <div>
-                    <strong>Horários realmente flexíveis</strong><br>
-                    Manhã, tarde ou fim do dia, com possibilidade de guardar chave se estiver a trabalhar.
+                    <strong>Flexible hours that fit your life</strong><br>
+                    Morning, afternoon or evening, with key-holding options if you’re at work.
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="about-image">
-              <!-- pexels-photo-713297.jpeg -->
+              <!-- 713297 -->
               <img src="https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg" alt="Clean modern kitchen after professional cleaning">
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- GALLERY -->
-      <section id="gallery">
-        <div class="container">
-          <div class="section-head">
-            <div class="section-eyebrow">Gallery</div>
-            <h2 class="section-title">A glimpse of the Swift finish</h2>
-            <p class="section-sub">
-              Alguns exemplos do tipo de ambientes que cuidamos – desde casas modernas a espaços comerciais e áreas comuns.
-            </p>
-          </div>
-
-          <div class="gallery-grid">
+          <!-- Gallery estilo Sonnic -->
+          <div class="gallery-strip">
             <div class="gallery-item">
-              <!-- pexels-photo-38325.jpeg -->
+              <!-- 38325 -->
               <img src="https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housework-housekeeping-38325.jpeg" alt="Vacuum cleaning a carpet">
               <div class="gallery-label">Carpets & floors</div>
             </div>
             <div class="gallery-item">
-              <!-- pexels-photo-4099467.jpeg (repetimos em formato diferente) -->
-              <img src="https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg" alt="Cleaner working in a bright living room">
-              <div class="gallery-label">Living areas</div>
+              <!-- 6196228 (construção) -->
+              <img src="https://images.pexels.com/photos/6196228/pexels-photo-6196228.jpeg" alt="Team checking building under construction">
+              <div class="gallery-label">Builders clean</div>
             </div>
             <div class="gallery-item">
-              <!-- pexels-photo-6195105.jpeg -->
-              <img src="https://images.pexels.com/photos/6195105/pexels-photo-6195105.jpeg" alt="Office cleaner at work">
-              <div class="gallery-label">Offices</div>
+              <!-- 4099467 -->
+              <img src="https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg" alt="Cleaner working in living room">
+              <div class="gallery-label">Deep cleaning</div>
             </div>
             <div class="gallery-item">
-              <!-- pexels-photo-3993450.jpeg -->
-              <img src="https://images.pexels.com/photos/3993450/pexels-photo-3993450.jpeg" alt="Team cleaning empty apartment">
+              <!-- 3993450 outra vez -->
+              <img src="https://images.pexels.com/photos/3993450/pexels-photo-3993450.jpeg" alt="End of tenancy clean">
               <div class="gallery-label">End of tenancy</div>
-            </div>
-            <div class="gallery-item">
-              <!-- pexels-photo-625279.jpeg -->
-              <img src="https://images.pexels.com/photos/625279/pexels-photo-625279.jpeg" alt="Cleaner vacuuming living room">
-              <div class="gallery-label">Regular cleaning</div>
-            </div>
-            <div class="gallery-item">
-              <!-- pexels link de construção (usamos imagem relacionada do mesmo tema) -->
-              <img src="https://images.pexels.com/photos/6196228/pexels-photo-6196228.jpeg" alt="Man and woman checking a building under construction">
-              <div class="gallery-label">Post-construction</div>
             </div>
           </div>
         </div>
@@ -881,16 +971,16 @@
         <div class="container">
           <div class="section-head">
             <div class="section-eyebrow">Contact</div>
-            <h2 class="section-title">Request your free cleaning quote</h2>
+            <h2 class="section-title">Request your free quote</h2>
             <p class="section-sub">
-              Sem compromisso. Envie alguns detalhes sobre o seu espaço e voltamos a contactar o mais rápido possível.
+              No obligation. Send a few details about your property and we’ll get back to you as soon as possible.
             </p>
           </div>
 
           <div class="contact-card">
             <div class="contact-info">
               <p>
-                Prefere falar diretamente? Pode ligar, enviar mensagem ou usar o WhatsApp. Estamos disponíveis para explicar opções e sugerir o melhor plano para si.
+                Prefer to speak directly? You can call, email or send a WhatsApp. We’re happy to discuss your needs and suggest the best option for you.
               </p>
 
               <div class="contact-row">
@@ -917,7 +1007,7 @@
               </div>
 
               <p style="font-size:0.8rem;color:#9ca3af;margin-top:6px;">
-                *Respostas fora do horário normal podem demorar um pouco mais.
+                *Response times may vary outside working hours.
               </p>
             </div>
 
@@ -953,7 +1043,7 @@
                 Send request
               </button>
               <div style="font-size:0.78rem;color:#9ca3af;margin-top:4px;">
-                Este formulário é apenas visual. Liga-o ao teu email ou a um serviço de formulários para receber as mensagens.
+                This form is for layout only. Connect it to your email or a form service to receive messages.
               </div>
             </form>
           </div>
@@ -963,13 +1053,11 @@
 
     <!-- FOOTER -->
     <footer>
-      <div class="container">
-        <div class="footer-inner">
-          <div>© <span id="year"></span> Swift Cleaning Service. All rights reserved.</div>
-          <div class="footer-links">
-            <span>Jersey · Channel Islands</span>
-            <span>Professional cleaning for homes & businesses</span>
-          </div>
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Swift Cleaning Service. All rights reserved.</div>
+        <div class="footer-links">
+          <span>Jersey · Channel Islands</span>
+          <span>Professional cleaning for homes & businesses</span>
         </div>
       </div>
     </footer>
@@ -979,4 +1067,4 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
-  </html>
+</html>
